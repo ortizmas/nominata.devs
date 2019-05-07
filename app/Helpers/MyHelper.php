@@ -189,48 +189,49 @@ class MyHelper
 		            	</div>
 					</div>
 
-		        <?
+		        <?php
 		        }
 		    }
-		}
+	}
 
-		public static function palestras(){
-	        $palestras = Post::where('status', 1)->where('category_id', 3)->get();;
-		    foreach ($palestras as $key => $value) {
-		        if ($value->redirect == 1) { ?>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 pb-3">
-						<div class="card">
-		            		<div class="image">
-		            			<img class="card-img-top img-fluid" src="uploads/images/<?php echo $value->image; ?>" alt="<?php echo $value->title ?>">
-		            		</div>
-		            		<div class="details">
-		            			<div class="center">
-		            				<a target="<?php echo $value->target ?>" href="<?php echo $value->external_url ?>"><h1><?php echo $value->title ?></h1></a>
-		            				<p><?php echo $value->description; ?></p>
-		            				<a class="btn btn-outline-dark btn-sm" target="<?php echo $value->target ?>" href="<?php echo $value->external_url ?>"><i class="fa fa-plus"> </i> INFO</a>
-		            			</div>
-		            		</div>
-		            	</div>
-					</div>
-		        <?
-		        }else{ ?>
-		            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 pb-3">
-		            	<div class="card">
-		            		<div class="image">
-		            			<img class="card-img-top img-fluid" src="uploads/images/<?php echo $value->image; ?>" alt="<?php echo $value->title ?>">
-		            		</div>
-		            		<div class="details">
-		            			<div class="center">
-		            				<a target="<?php echo $value->target ?>" href="<?php echo 'palestra/'.$value->slug ?>"><h1><?php echo $value->title ?></h1></a>
-		            				<p><?php echo $value->description; ?></p>
-		            				<a class="btn btn-outline-dark btn-sm" target="<?php echo $value->target ?>" href="<?php echo 'palestra/'.$value->slug ?>"><i class="fa fa-plus"> </i> INFO</a>
-		            			</div>
-		            		</div>
-		            	</div>
-					</div>
-		        <?
-		        }
-		    }
-		}
+	public static function palestras(){
+        $palestras = Post::where('status', 1)->where('category_id', 3)->get();;
+	    foreach ($palestras as $key => $value) {
+	        if ($value->redirect == 1) { ?>
+	            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 pb-3">
+					<div class="card">
+	            		<div class="image">
+	            			<img class="card-img-top img-fluid" src="uploads/images/<?php echo $value->image; ?>" alt="<?php echo $value->title ?>">
+	            		</div>
+	            		<div class="details">
+	            			<div class="center">
+	            				<a target="<?php echo $value->target ?>" href="<?php echo $value->external_url ?>"><h1><?php echo $value->title ?></h1></a>
+	            				<p><?php echo $value->description; ?></p>
+	            				<a class="btn btn-outline-dark btn-sm" target="<?php echo $value->target ?>" href="<?php echo $value->external_url ?>"><i class="fa fa-plus"> </i> INFO</a>
+	            			</div>
+	            		</div>
+	            	</div>
+				</div>
+	        <?php
+	        }else{ ?>
+	            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 pb-3">
+	            	<div class="card">
+	            		<div class="image">
+	            			<img class="card-img-top img-fluid" src="uploads/images/<?php echo $value->image; ?>" alt="<?php echo $value->title ?>">
+	            		</div>
+	            		<div class="details">
+	            			<div class="center">
+	            				<a target="<?php echo $value->target ?>" href="<?php echo 'palestra/'.$value->slug ?>"><h1><?php echo $value->title ?></h1></a>
+	            				<p><?php echo $value->description; ?></p>
+	            				<a class="btn btn-outline-dark btn-sm" target="<?php echo $value->target ?>" href="<?php echo 'palestra/'.$value->slug ?>"><i class="fa fa-plus"> </i> INFO</a>
+	            			</div>
+	            		</div>
+	            	</div>
+				</div>
+	        <?php
+	        }
+	    }
+	}
 
 }
+?>

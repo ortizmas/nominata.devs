@@ -37,11 +37,8 @@ class CreateTraineesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedInteger('career_id');
-            $table->foreign('career_id')->references('id')->on('careers');
-
-            $table->unsignedInteger('period_id');
-            $table->foreign('period_id')->references('id')->on('periods');
+            $table->unsignedBigInteger('association_id');
+            $table->foreign('association_id')->references('id')->on('associations');
             
             $table->timestamps();
         });

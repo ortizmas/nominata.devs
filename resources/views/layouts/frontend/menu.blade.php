@@ -15,7 +15,7 @@
                         </ul>
 
                         <ul class="navbar-nav">
-                            {{ MyHelper::MenuHeader() }}
+                            {!! MyHelper::MenuHeader() !!}
                         </ul>
                     </div>
                 </nav>
