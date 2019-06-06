@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        {{-- <img src="/img/logo-brando-61x61.png" alt="Laravel Starter" class="brand-image elevation-3" style="opacity: .8" width="100%"> --}}
-        <span class="brand-text font-weight-light"><strong>NOMINATA 2019</strong></span>
+        <img src="/img/logo-brando-61x61.png" alt="Laravel Starter" class="brand-image elevation-3" style="opacity: .8" width="100%">
+        <span class="brand-text font-weight-light"><strong>TRAINEE</strong></span>
     </a>
 
     <!-- Sidebar -->
@@ -138,25 +138,26 @@
                     </ul>
                 </li>
 
-                <li class="nav-header">SEÇÃO NOMINATA</li>
+
+                <li class="nav-header">SEÇÃO INSTITUIÇÕES</li>
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-university"></i>
                         <p>
-                          Uniões
+                          Universidade
                           <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('unions.index') }}" class="nav-link">
+                            <a href="{{ route('universities.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Todos as uniões</p>
+                                <p>Todos as universidades</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('unions.create') }}" class="nav-link">
+                            <a href="{{ route('universities.create') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Adicionar novo</p>
                             </a>
@@ -168,21 +169,28 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-address-book"></i>
                         <p>
-                          Associações
+                          Carreiras
                           <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('associations.index') }}" class="nav-link">
+                            <a href="{{ route('careers.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Todos as Associações</p>
+                                <p>Todos os cursos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('associations.create') }}" class="nav-link">
+                            <a href="{{ route('careers.create') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Adicionar novo</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('periods.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Periodo</p>
                             </a>
                         </li>
                     </ul>
@@ -192,7 +200,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-graduate"></i>
                         <p>
-                          Formandos
+                          Trainee
                           <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
@@ -200,7 +208,7 @@
                         <li class="nav-item">
                             <a href="{{ route('trainees.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Todos os formandos</p>
+                                <p>Todos os trainers</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -212,8 +220,137 @@
                     </ul>
                 </li>
 
-            
-                <li class="nav-header">LOGOUT</li>
+                <li class="nav-header">SEÇÃO CURSOS ONLINE</li>
+
+                <li class="nav-item">
+                    <a href="{{ route('categories.index') }}" class="nav-link">
+                        <i class="fa fa-circle-o nav-icon"></i>
+                        <p>Categorias</p>
+                    </a>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                          Cursos
+                          <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('courses.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Todos os cursos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('courses.create') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Adicionar novo</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                          Modulos
+                          <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('modules.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Todos os modulos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('modules.create') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Adicionar novo</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                          Salas de Aula
+                          <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('classrooms.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Todos os modulos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('classrooms.create') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Adicionar novo</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                          Assignar aulas
+                          <i class="fa fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('assignments.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Lista de Aulas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('assignments.create') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Adicionar novo</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-header">MISCELLANEOUS</li>
+                <li class="nav-item">
+                    <a href="https://adminlte.io/docs" class="nav-link">
+                        <i class="nav-icon fa fa-file"></i>
+                        <p>Documentation</p>
+                    </a>
+                </li>
+                <li class="nav-header">LABELS</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fas fa-circle-notch text-danger"></i>
+                        <p class="text">Important</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fas fa-circle-notch text-warning"></i>
+                        <p>Warning</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fas fa-circle-notch text-info"></i>
+                        <p>Informational</p>
+                    </a>
+                </li>
 
                 @if (auth()->user()->name!=null)
                     <li class="nav-item">

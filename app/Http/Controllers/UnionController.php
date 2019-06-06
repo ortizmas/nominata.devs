@@ -4,80 +4,59 @@ namespace App\Http\Controllers;
 
 use App\Union;
 use Illuminate\Http\Request;
+use App\Http\Requests\Unions\StoreUnionRequest;
+use App\Http\Requests\Unions\UpdateUnionRequest;
 
 class UnionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $unions = Union::get();
+
+        return view('dashboard.unions.index', compact('unions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        return view('dashboard.unions.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreUnionRequest $request)
     {
-        //
-    }
+        $union = Union::create([
+            'initials' => $request['initials'],
+            'slug' => $request['slug'],
+            'name' => $request['name']
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Union  $union
-     * @return \Illuminate\Http\Response
-     */
+        return redirect()->route('unions.index')->with('success', 'União cadastrado com sucesso!!');
+    }
+   
     public function show(Union $union)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Union  $union
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Union $union)
     {
-        //
+        return view('dashboard.unions.edit', compact('union'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Union  $union
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Union $union)
+    public function update(UpdateUnionRequest $request, Union $union)
     {
-        //
+        $unionUpdate = Union::find($union->id);
+
+        $union = $unionUpdate->update([
+            'initials' => $request['initials'],
+            'slug' => $request['slug'],
+            'name' => $request['name']
+        ]);
+
+        return redirect()->route('unions.index')->with('success', 'União alterado com sucesso!!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Union  $union
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Union $union)
     {
         //

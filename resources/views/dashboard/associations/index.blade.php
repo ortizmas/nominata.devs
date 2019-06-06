@@ -8,11 +8,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Trainees</h1>
+            <h1 class="m-0 text-dark">Associações</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('trainees.create') }}"><i class="fas fa-plus-square" style="font-size: 48px;"></i></a></li>
+              <li class="breadcrumb-item"><a href="{{ route('associations.create') }}"><i class="fas fa-plus-square" style="font-size: 48px;"></i></a></li>
               {{-- <li class="breadcrumb-item active">Dashboard v2</li> --}}
             </ol>
           </div><!-- /.col -->
@@ -37,27 +37,26 @@
       				<thead>
       					<tr>
       						<th>#</th>
-      						<th>Nome</th>
-      						<th>Email</th>
-                  <th>Foto</th>
-                  <th>Associação</th>
+      						<th>Sigla</th>
+      						<th>Slug</th>
+                  <th>Associações</th>
+                  <th>Unioēs</th>
                   <th>Estado</th>
       						<th colspan="2" rowspan="">Ações</th>
       					</tr>
       				</thead>
       				<tbody>
       					
-                        @foreach ($trainees as $key => $value)
+                        @foreach ($associations as $key => $value)
                         <tr>
                            <td>{{ $key + 1 }}</td>
+                           <td>{{ $value->initials }}</td>
+                           <td>{{ $value->slug }}</td>
                            <td>{{ $value->name }}</td>
-                           <td>{{ $value->email }}</td>
-                           <td>{{ $value->image }}</td>
-                           <td>{{ $value->association->initials }}</td>
-                           <td>{{ ( $value->enabled == 1 ) ? 'Ativo' : 'Desativo' }}</td>
-                           <td><a href="{{ route('trainees.edit', $value->id) }}" title="Alterar"><i class="fas fa-edit"></i></a></td>
+                           <td>{{ $value->union->initials }}</td>
+                           <td><a href="{{ route('associations.edit', $value->id) }}" title="Alterar"><i class="fas fa-edit"></i></a></td>
                            <td>
-                                <a href="{{ route('trainees.destroy', $value->id) }}" class="btn-delete" title="{{ $value->name }}">
+                                <a href="{{ route('associations.destroy', $value->id) }}" class="btn-delete" title="{{ $value->initials }}">
                                   <i class="fas fa-trash" style="color:red;"></i>
                               </a>        
                           </td>

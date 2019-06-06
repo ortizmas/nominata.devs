@@ -17,22 +17,22 @@ class CreateTraineesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
+            $table->string('phone',16);
             $table->string('slug');
             $table->char('age', 3);
             $table->char('gender', 1);
             $table->string('marital_status');
-            $table->string('some_charges');
             $table->string('image');
             $table->text('description');
+            $table->string('image_men');
             $table->text('content');
-            $table->boolean('enabled')->default(1);
+            $table->string('image_woman');
+            $table->text('content_woman');
             $table->string('external_url');
             $table->char('redirect', 3);
-            $table->string('author');
+            $table->boolean('status')->default(1);
             $table->integer('order');
-            $table->boolean('have_job')->nullable();
-            $table->string('office')->nullable();
-            $table->string('company')->nullable();
+            $table->boolean('enabled')->default(1);
 
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

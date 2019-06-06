@@ -23,7 +23,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'Frontend\GtalentosController@index')->name('inicio');
+Route::get('/', 'Frontend\AppController@index')->name('inicio');
+
+Route::get('/gestao', 'Frontend\GtalentosController@index')->name('inicio');
 Route::get('/processo-seletivo', 'Frontend\GtalentosController@vacancies')->name('processo.seletivo');
 Route::post('/send-email', 'MailController@sendemail')->name('send.email');
 Route::get('/fale-conosco', 'Frontend\GtalentosController@faleconosco')->name('fale.conosco');
@@ -63,7 +65,11 @@ Route::resource('careers', 'CareerController');
 Route::resource('courses', 'CourseController');
 Route::resource('modules', 'ModuleController');
 Route::resource('classrooms', 'ClassroomController');
+
+Route::resource('unions', 'UnionController');
+Route::resource('associations', 'AssociationController');
 Route::resource('trainees', 'TraineeController');
+
 Route::resource('assignments', 'AssignmentController');
 Route::get('assignments/modules/{course_id}', 'AssignmentController@getModules')->name('assignments.modules');
 Route::get('assignments/classrooms/{module_id}', 'AssignmentController@getClassrooms')->name('assignments.classrooms');

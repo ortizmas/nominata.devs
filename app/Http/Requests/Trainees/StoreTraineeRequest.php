@@ -27,12 +27,10 @@ class StoreTraineeRequest extends FormRequest
             'name' => 'required|string|max:255',
             'slug' => "required|min:3|max:50|unique:trainees,slug",
             'email' => "required|min:3|max:50|unique:trainees,email",
-            'gender' => "required",
             'marital_status' => "required",
             'description' => 'max:1000',
             'image' => 'image',
-            'course_id' => "required",
-            'period_id' => "required",
+            'association_id' => "required",
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Trainee;
+use App\Association;
 use App\Course;
 use App\Period;
 use Auth;
@@ -42,9 +43,9 @@ class TraineeController extends Controller
      */
     public function create()
     {
-        $courses = Course::get(['id', 'name']);
+        $associations = Association::get(['id', 'initials']);
         $periods = Period::get(['id', 'year']);
-        return view('dashboard.trainees.create', compact('courses', 'periods') );
+        return view('dashboard.trainees.create', compact('associations', 'periods') );
     }
 
     /**
@@ -53,7 +54,7 @@ class TraineeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTraineeRequest $request)
+    public function store(StoreAssociationRequest $request)
     {
 
         if ( $request->hasFile('image') ) {
@@ -62,28 +63,41 @@ class TraineeController extends Controller
         } else {
             $imageName = $request['image'];
         }
+
+        if ( $request->hasFile('image_men') ) {
+            $imageNameMen = time().'.'.request()->image_men->getClientOriginalExtension();
+            $updload = request()->image_men->move(public_path('uploads/trainees'), $imageNameMen);
+        } else {
+            $imageNameMen = $request['image_men'];
+        }
+
+        if ( $request->hasFile('image_woman') ) {
+            $imageNameWomen = time().'.'.request()->image_woman->getClientOriginalExtension();
+            $updload = request()->image_woman->move(public_path('uploads/trainees'), $imageNameWomen);
+        } else {
+            $imageNameWomen = $request['image_woman'];
+        }
         
         $trainee = Trainee::create([
             'name' => $request['name'],
-            'email' => $request['email'],
             'slug' => $request['slug'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
             'age' => $request['age'],
             'gender' => $request['gender'],
             'marital_status' => $request['marital_status'],
-            'some_charges' => $request['some_charges'],
             'image' => $imageName,
             'description' => $request['description'],
+            'image_men' => $imageNameMen,
             'content' => $request['content'],
+            'image_woman' => $imageNameWomen,
+            'content_woman' => $request['content_woman'],
             'redirect' => $request['redirect'],
             'external_url' => $request['external_url'],
-            'author' => $request['author'],
             'order' => $request['order'],
-            'have_job' => $request['have_job'],
-            'office' => $request['office'],
-            'company' => $request['company'],
             'enabled' => $request['enabled'],
-            'course_id' => $request['course_id'],
-            'period_id' => $request['period_id'],
+            'status' => $request['status'],
+            'association_id' => $request['association_id'],
             'user_id' => Auth::user()->id,
         ]);
 
@@ -109,9 +123,9 @@ class TraineeController extends Controller
      */
     public function edit(Trainee $trainee)
     {
-        $courses = Course::get(['id', 'name']);
+        $associations = Association::get(['id', 'initials']);
         $periods = Period::get(['id', 'year']);
-        return view('dashboard.trainees.edit', compact('courses', 'periods', 'trainee'));
+        return view('dashboard.trainees.edit', compact('associations', 'periods', 'trainee'));
     }
 
     /**
@@ -132,29 +146,42 @@ class TraineeController extends Controller
             $imageName = $trainee->image;
         }
 
+        if ( $request->hasFile('image_men') ) {
+            $imageNameMen = time().'.'.request()->image->getClientOriginalExtension();
+            $updload = request()->image->move(public_path('uploads/trainees'), $imageNameMen);
+        } else {
+            $imageNameMen = $trainee->image_men;
+        }
+
+        if ( $request->hasFile('image_woman') ) {
+            $imageNameWomen = time().'.'.request()->image->getClientOriginalExtension();
+            $updload = request()->image->move(public_path('uploads/trainees'), $imageNameWomen);
+        } else {
+            $imageNameWomen = $trainee->image_woman;
+        }
+
         
         
         $trainee = $traineeUpdate->update([
             'name' => $request['name'],
-            'email' => $request['email'],
             'slug' => $request['slug'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
             'age' => $request['age'],
             'gender' => $request['gender'],
             'marital_status' => $request['marital_status'],
-            'some_charges' => $request['some_charges'],
             'image' => $imageName,
             'description' => $request['description'],
+            'image_men' => $imageNameMen,
             'content' => $request['content'],
+            'image_woman' => $imageNameWomen,
+            'content_woman' => $request['content_woman'],
             'redirect' => $request['redirect'],
             'external_url' => $request['external_url'],
-            'author' => $request['author'],
             'order' => $request['order'],
-            'have_job' => $request['have_job'],
-            'office' => $request['office'],
-            'company' => $request['company'],
             'enabled' => $request['enabled'],
-            'course_id' => $request['course_id'],
-            'period_id' => $request['period_id'],
+            'status' => $request['status'],
+            'association_id' => $request['association_id'],
             'user_id' => Auth::user()->id,
         ]);
 

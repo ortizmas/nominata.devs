@@ -15,7 +15,7 @@ class AppController extends Controller
     	$cursos = Course::all();
     	$trainees = Trainee::get()->where('have_job', 0)->where('enabled', 1);
         $young_employees = Trainee::get()->where('have_job', 1)->where('enabled', 1);
-    	return view('frontend.jovenst.index', compact('cursos', 'trainees', 'young_employees'));
+    	return view('frontend.index', compact('cursos', 'trainees', 'young_employees'));
     }
 
     public function show($slug = null)

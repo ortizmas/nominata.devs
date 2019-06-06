@@ -28,12 +28,10 @@ class UpdateTraineeRequest extends FormRequest
             'name' => 'required|string|max:255',
             'slug' => "required|min:3|max:50|unique:trainees,slug,{$this->trainee->id}",
             'email' => "required|min:3|max:50|unique:trainees,email,{$this->trainee->id}",
-            'gender' => "required",
             'marital_status' => "required",
             'description' => 'max:1000',
             'image' => 'image',
-            'course_id' => "required",
-            'period_id' => "required",
+            'association_id' => "required",
         ];
     }
 }

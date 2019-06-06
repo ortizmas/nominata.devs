@@ -8,31 +8,35 @@ class Trainee extends Model
 {
     protected $fillable = [
     	'name',
+        'slug',
         'email',
-    	'slug',
+    	'phone',
     	'age',
         'gender',
     	'marital_status',
-    	'some_charges',
     	'image',
     	'description',
+        'image_men',
     	'content',
-    	'enabled',
+        'image_woman',
+        'content_woman',
     	'external_url',
     	'redirect',
-    	'author',
-        'have_job',
-        'office',
-        'company',
         'order',
+        'enabled',
+        'status',
     	'user_id',
-    	'course_id',
-    	'period_id'
+    	'association_id'
     ];
 
     public function user()
     {
     	return $this->belongsTo('App\User');
+    }
+
+    public function association()
+    {
+        return $this->belongsTo('App\Association');
     }
 
     public function course()

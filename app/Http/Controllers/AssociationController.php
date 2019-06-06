@@ -3,81 +3,64 @@
 namespace App\Http\Controllers;
 
 use App\Association;
+use App\Union;
 use Illuminate\Http\Request;
+use App\Http\Requests\Associations\StoreAssociationRequest;
+use App\Http\Requests\Associations\UpdateAssociationRequest;
 
 class AssociationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $associations = Association::get();
+
+        return view('dashboard.associations.index', compact('associations'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        $unions = Union::get(['id', 'initials']);
+        return view('dashboard.associations.create', compact('unions'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreAssociationRequest $request)
     {
-        //
-    }
+        $association = Association::create([
+            'initials' => $request['initials'],
+            'slug' => $request['slug'],
+            'name' => $request['name'],
+            'union_id' => $request['union_id']
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Association  $association
-     * @return \Illuminate\Http\Response
-     */
+        return redirect()->route('associations.index')->with('success', 'Associação cadastrado com sucesso!!');
+    }
+   
     public function show(Association $association)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Association  $association
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Association $association)
     {
-        //
+        $unions = Union::get(['id', 'initials']);
+        return view('dashboard.associations.edit', compact('unions', 'association'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Association  $association
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Association $association)
+    public function update(UpdateAssociationRequest $request, Union $association)
     {
-        //
+        $associationUpdate = Association::find($association->id);
+
+        $association = $associationUpdate->update([
+            'initials' => $request['initials'],
+            'slug' => $request['slug'],
+            'name' => $request['name'],
+            'union_id' => $request['union_id']
+        ]);
+
+        return redirect()->route('associations.index')->with('success', 'Associação alterado com sucesso!!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Association  $association
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Association $association)
     {
         //
