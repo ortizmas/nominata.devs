@@ -107,7 +107,7 @@
                             <li>
                                 <img src="{{ asset('uploads/trainees/'. $jt->image) }}" alt="{{ $jt->name }}">
                                 <a class="users-list-name" href="{{ route('trainees.edit', $jt->id) }}">{{ $jt->name }}</a>
-                                <span class="users-list-date">Curso {{ $jt->course->name }}</span>
+                                <span class="users-list-date">Associação <strong>{{ $jt->association->initials }}</strong></span>
                             </li>
                             @endforeach
                         @endif
