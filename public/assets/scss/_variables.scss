@@ -1,0 +1,49 @@
+// Variables
+
+// Color overrides
+
+// Set a custom color
+$orange: #f4623a !default;
+$brown: #5c4d42 !default;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #8B0304 !default;
+//$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$white: #ffffff;
+$light: #fcffff;
+$lilas: #3e4095;
+
+$gray: #eeeeee;
+$white-gray: #fbfbfb;
+
+// Set primary color to orange
+$primary: $red !default;
+
+$dark: #1A1A1A;
+$grey: #E6E6E6;
+$dark-grey: #474747;
+
+$bg-red: #8B0304;
+$bg-green: #13583F;
+$bg-yellow: #CD960F;
+
+// Font overrides
+//$font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
+
+//$font-family-serif: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
+
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-base: $font-family-montserrat !default;
+
+$headings-font-family: $font-family-montserrat !default;
+
+// Custom variables
+$navbar-height: 72px;
