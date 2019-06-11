@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="/img/logo-brando-61x61.png" alt="Laravel Starter" class="brand-image elevation-3" style="opacity: .8" width="100%">
-        <span class="brand-text font-weight-light"><strong>TRAINEE</strong></span>
+        <span class="brand-text font-weight-light"><strong>PAINEL ADMIN</strong></span>
     </a>
 
     <!-- Sidebar -->

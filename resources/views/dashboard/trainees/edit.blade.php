@@ -29,6 +29,14 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ session('success') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
             @if (session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <strong>{{ session('error') }}</strong>
@@ -144,16 +152,6 @@
                                         </span>
                                     @endif
                                 </div>
-                                
-                                <div class="form-group mb-3">
-                                    <textarea name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Resumo...">{{ old('description', $trainee->description) }}</textarea>
-                                    <samll id="edescriptionHelp" class="form-text text-muted">Resumos são pequenas descrições opcionais do conteúdo do seu post feitas manualmente, que podem ser usadas em seu tema. <a target="_blank" href="https://codex.wordpress.org/pt-br:Resumo" title="Resumo">Aprenda mais sobre resumos manuais.</a></small>
-                                    @if ($errors->has('description'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('description') }}</strong>
-                                        </span> 
-                                    @endif
-                                </div>
 
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
@@ -174,7 +172,17 @@
                                             <strong>{{ $errors->first('content') }}</strong>
                                         </span> 
                                     @endif
-                                </div>    
+                                </div>
+                                <hr>
+                                <h2>DADOS DA ESPODA</h2>
+                                <div class="input-group mb-3">
+                                    <input id="name_wife" type="text" class="form-control{{ $errors->has('name_wife') ? ' is-invalid' : '' }}" name="name_wife" value="{{ old('name_wife', $trainee->name_wife) }}" placeholder="Nome completo" required autofocus> 
+                                    @if ($errors->has('name_wife'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name_wife') }}</strong>
+                                    </span> 
+                                    @endif
+                                </div>
 
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
@@ -185,6 +193,16 @@
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('image_woman') }}</strong>
                                         </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <textarea id="description" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Resumo...">{{ old('description', $trainee->description) }}</textarea>
+                                    <samll id="edescriptionHelp" class="form-text text-muted">Resumos são pequenas descrições opcionais do conteúdo do seu post feitas manualmente, que podem ser usadas em seu tema. <a target="_blank" href="https://codex.wordpress.org/pt-br:Resumo" title="Resumo">Aprenda mais sobre resumos manuais.</a></small>
+                                    @if ($errors->has('description'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span> 
                                     @endif
                                 </div>
 
@@ -434,8 +452,24 @@
         // tinymce.init(editor_config);
         
         var BASE_URL = "/"; // use your own base url
+
         tinymce.init({
-            selector: "textarea#content_men",
+            selector: "#description",
+            // theme: "modern",width: 1200,height: 60,
+            relative_urls: false,
+            remove_script_host: false,
+            plugins: [
+            "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+            "table contextmenu directionality emoticons paste responsivefilemanager textcolor code"
+            ],
+            toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+
+        });
+
+        tinymce.init({
+
+            selector: "#content_men",
             // theme: "modern",width: 1200,height: 60,
             relative_urls: false,
             remove_script_host: false,
@@ -450,13 +484,14 @@
             relative_urls: false,
 
             external_filemanager_path: BASE_URL + "vendor/filemanagerjs/filemanager/",
+            //file_browser_callback: function(filemanager, url, objectType, w) { filemanager(filemanager, url, objectType, w); },
             filemanager_title: "Media Gallery",
             external_plugins: { "filemanager": BASE_URL + "vendor/filemanagerjs/filemanager/plugin.min.js" }
 
         });
 
         tinymce.init({
-            selector: "textarea#content_woman",
+            selector: "#content_woman",
             // theme: "modern",width: 1200,height: 60,
             relative_urls: false,
             remove_script_host: false,

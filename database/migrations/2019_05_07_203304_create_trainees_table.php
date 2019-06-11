@@ -26,6 +26,7 @@ class CreateTraineesTable extends Migration
             $table->text('description');
             $table->string('image_men');
             $table->text('content');
+            $table->string('name_wife');
             $table->string('image_woman');
             $table->text('content_woman');
             $table->string('external_url');

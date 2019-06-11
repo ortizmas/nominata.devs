@@ -30,6 +30,9 @@ hr.light {
 .bg-three{
   background: $grey-three!important;
 }
+.bg-four{
+    background: $grey-four!important;
+}
 
 // Button restyling
 .btn {
@@ -118,14 +121,45 @@ hr.light {
 }
 
 //Content page
+.cvitae-section-content {
+    border-collapse: collapse;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.05);
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
 .content-page{
+    h6{
+        font-weight: 600;
+        letter-spacing: normal;
+    }
+    p, ul li, ol li{
+        font-size: .9rem;
+        font-weight: 300;
+        letter-spacing: normal;
 
+        strong{
+            font-size: .9rem;
+            font-weight: 500;
+            letter-spacing: normal;
+        }
+    }
   .content-text{
-
     h1{
         font-family: $font-family-montserrat;
         font-weight: 200;
         letter-spacing: normal;
+    }
+    h6{
+        font-weight: 400;
+        letter-spacing: normal; 
+    }
+
+    span{
+        font-size: .9rem;
+        font-weight: 300;
+        letter-spacing: normal; 
     }
   }
 }

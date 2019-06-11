@@ -156,16 +156,6 @@
                                     @endif
                                 </div>
                                 
-                                <div class="form-group mb-3">
-                                    <textarea name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Resumo...">{{ old('description') }}</textarea>
-                                    <samll id="edescriptionHelp" class="form-text text-muted">Resumos são pequenas descrições opcionais do conteúdo do seu post feitas manualmente, que podem ser usadas em seu tema. <a target="_blank" href="https://codex.wordpress.org/pt-br:Resumo" title="Resumo">Aprenda mais sobre resumos manuais.</a></small>
-                                    @if ($errors->has('description'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('description') }}</strong>
-                                        </span> 
-                                    @endif
-                                </div>
-
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
                                         <input type="file" name="image_men" class="custom-file-input {{ $errors->has('image_men') ? ' is-invalid' : ''}}" id="customFile2" lang="pt-BR">
@@ -186,6 +176,15 @@
                                         </span> 
                                     @endif
                                 </div>   
+                                <h2>DADOS DA ESPOSA</h2>
+                                <div class="input-group mb-3 ">
+                                    <input id="name_wife" type="text" class="form-control{{ $errors->has('name_wife') ? ' is-invalid' : '' }}" name="name_wife" value="{{ old('name_wife') }}" placeholder="Nome completo da esposa" required autofocus> 
+                                    @if ($errors->has('name_wife'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name_wife') }}</strong>
+                                    </span> 
+                                    @endif
+                                </div>
 
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
@@ -196,6 +195,16 @@
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('image_woman') }}</strong>
                                         </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <textarea id="description" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Resumo..." rows="10">{{ old('description') }}</textarea>
+                                    <samll id="edescriptionHelp" class="form-text text-muted">Resumos são pequenas descrições opcionais do conteúdo do seu post feitas manualmente, que podem ser usadas em seu tema. <a target="_blank" href="https://codex.wordpress.org/pt-br:Resumo" title="Resumo">Aprenda mais sobre resumos manuais.</a></small>
+                                    @if ($errors->has('description'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span> 
                                     @endif
                                 </div>
 
@@ -431,8 +440,9 @@
         // tinymce.init(editor_config);
         
         var BASE_URL = "/"; // use your own base url
+
         tinymce.init({
-            selector: "textarea#content_men",
+            selector: "#description",
             // theme: "modern",width: 1200,height: 60,
             relative_urls: false,
             remove_script_host: false,
@@ -453,7 +463,28 @@
         });
 
         tinymce.init({
-            selector: "textarea#content_woman",
+            selector: "#content_men",
+            // theme: "modern",width: 1200,height: 60,
+            relative_urls: false,
+            remove_script_host: false,
+            plugins: [
+            "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+            "table contextmenu directionality emoticons paste responsivefilemanager textcolor code"
+            ],
+            toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+            toolbar2: "| link unlink anchor | responsivefilemanager | image media | forecolor backcolor  | print preview code ",
+            image_advtab: true,
+            relative_urls: false,
+
+            external_filemanager_path: BASE_URL + "vendor/filemanagerjs/filemanager/",
+            filemanager_title: "Media Gallery",
+            external_plugins: { "filemanager": BASE_URL + "vendor/filemanagerjs/filemanager/plugin.min.js" }
+
+        });
+
+        tinymce.init({
+            selector: "#content_woman",
             // theme: "modern",width: 1200,height: 60,
             relative_urls: false,
             remove_script_host: false,

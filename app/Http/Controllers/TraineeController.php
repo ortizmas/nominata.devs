@@ -90,6 +90,7 @@ class TraineeController extends Controller
             'description' => $request['description'],
             'image_men' => $imageNameMen,
             'content' => $request['content'],
+            'name_wife' => $request['name_wife'],
             'image_woman' => $imageNameWomen,
             'content_woman' => $request['content_woman'],
             'redirect' => $request['redirect'],
@@ -147,15 +148,15 @@ class TraineeController extends Controller
         }
 
         if ( $request->hasFile('image_men') ) {
-            $imageNameMen = time().'.'.request()->image->getClientOriginalExtension();
-            $updload = request()->image->move(public_path('uploads/trainees'), $imageNameMen);
+            $imageNameMen = time().'.'.request()->image_men->getClientOriginalExtension();
+            $updload = request()->image_men->move(public_path('uploads/trainees'), $imageNameMen);
         } else {
             $imageNameMen = $trainee->image_men;
         }
 
         if ( $request->hasFile('image_woman') ) {
-            $imageNameWomen = time().'.'.request()->image->getClientOriginalExtension();
-            $updload = request()->image->move(public_path('uploads/trainees'), $imageNameWomen);
+            $imageNameWomen = time().'.'.request()->image_woman->getClientOriginalExtension();
+            $updload = request()->image_woman->move(public_path('uploads/trainees'), $imageNameWomen);
         } else {
             $imageNameWomen = $trainee->image_woman;
         }
@@ -174,6 +175,7 @@ class TraineeController extends Controller
             'description' => $request['description'],
             'image_men' => $imageNameMen,
             'content' => $request['content'],
+            'name_wife' => $request['name_wife'],
             'image_woman' => $imageNameWomen,
             'content_woman' => $request['content_woman'],
             'redirect' => $request['redirect'],
@@ -185,7 +187,7 @@ class TraineeController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
-        return redirect()->route('trainees.index')->with('success', 'O trainee foi alterado com sucesso!!');
+        return redirect()->route('trainees.edit', $trainee)->with('success', 'O trainee foi alterado com sucesso!!');
     }
 
     /**

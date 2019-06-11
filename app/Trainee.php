@@ -18,6 +18,7 @@ class Trainee extends Model
     	'description',
         'image_men',
     	'content',
+        'name_wife',
         'image_woman',
         'content_woman',
     	'external_url',

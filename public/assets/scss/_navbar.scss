@@ -21,7 +21,7 @@
           color: $primary;
         }
         &.active {
-          color: $primary !important;
+          color: $grey-two !important;
         }
       }
     }
@@ -39,7 +39,7 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          color: fade-out($white, .3);
+          color: fade-out($white, .1);
           padding: 0 1rem;
           &:hover {
             color: $white;
@@ -65,9 +65,9 @@
       .navbar-nav {
         .nav-item {
           .nav-link {
-            color: $gray-900;
+            color: $grey-four;
             &:hover {
-              color: $primary;
+              color: $grey-one;
             }
           }
         }

@@ -3,7 +3,7 @@
 @section('content')
 
 
-	<div class="hero-show pb-5" id="home">
+    <div class="hero-show pb-5" id="home">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-danger" id="mainNav">
             <div class="container">
@@ -20,79 +20,141 @@
 
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">Home</a>
+                            <a class="nav-link js-scroll-trigger" href="/#about">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#services">Uniões</a>
+                            <a class="nav-link js-scroll-trigger" href="/#services">Uniões</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#formandos">Campos</a>
+                            <a class="nav-link js-scroll-trigger" href="/#formandos">Campos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">Todos</a>
+                            <a class="nav-link js-scroll-trigger" href="/#contact">Todos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#data">Data</a>
+                            <a class="nav-link js-scroll-trigger" href="/#data">Data</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </div>
+    <div class="clearfix"></div>
+    <!--http://ruvenpelka.com/demos/desmond-resume/light/-->
+    <section class="content-page  bg-white" id="formandos">
+        <div class="container-fluid shadow-sm mb-5 bg-white rounded-0">
+            <div class="row">
+                <div class="col-md-4 bg-one">
+                    <div class="container pt-5 pb-5">
+                        <div class="row justify-content-end">
+                            <div class="col-md-12 pr-2">
+                                <a class="formandos-box" href="#" >
+                                    <div class="bg-img h-100" style="background-image: url({{ asset('uploads/trainees/'. $trainee->image) }});"></div>
+                                </a>
+                                <div class="card border-0">
+                                    <div class="card-body bg-status-{{ $trainee->status }}">
+                                        <p class="text-white">
+                                            <strong>Status: </strong>{!! getStatus($trainee->status) !!}
+                                        </p>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="content-text">
+                                            <span class="text-white"><i class="fas fa-phone"></i> {{ $trainee->phone }}</span> <br>
+                                            <span class="text-white"><i class="fas fa-envelope"></i> {{ $trainee->email }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 bg-white">
+                    <div class="container pt-5 pb-5 h-100">
+                        <div class="row h-100 justify-content-start align-items-center">
+                            <div class="col-md-12 align-items-center pl-5">
+                                <div class="content-text">
+                                     <h1 class="text-red font-italic">Informações do formando</h1>
+                                    <h2 class="text-red pb-5">{{ $trainee->name }}</h2>
 
-        {{-- <div class="hero-show-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="hero-show-wrap flex-column justify-content-center align-items-start">
-                            <header class="entry-header">
-                                <h1>JOVENS TALENTOS</h1>
-                            </header>
+                                    <div class="hr-content mb-4"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md pb-3">
+                                            <h6>União</h6>
+                                            <span class="text-muted">{{ $trainee->association->union->initials }} - {{ $trainee->association->union->name }}</span>
+                                        </div>
+                                        <div class="col-md pb-3">
+                                            <h6>Associação</h6>
+                                            <span class="text-muted">{{ $trainee->association->initials }} - {{ $trainee->association->name }}</span>
+                                        </div>
+                                        <div class="col-md pb-3">
+                                            <h6>Estado civil</h6>
+                                            <span class="text-muted">{{ $trainee->marital_status }}</span>
+                                        </div>
+                                        <div class="col-md pb-3">
+                                            <h6>Contato</h6>
+                                            <span class="text-muted"><i class="fas fa-phone"></i> {{ $trainee->phone }}</span> <br>
+                                            <span class="text-muted"><i class="fas fa-envelope"></i> {{ $trainee->email }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> --}}
-    </div>
-    <div class="clearfix">
+        </div>
+
+        {!! $trainee->content !!}
         
-    </div>
-
-	<div class="container pt-5 pb-5">
-		<div class="row">
-			<div class="col-12 col-lg-12">
-				<div class="card mb-3">
-					<div class="card-header">
-						<h2 class="card-title">{{ $trainee->name }}</h2>
-						<p class="card-text float-right"><strong>Idade: </strong>{{ $trainee->age }}</p>
-						<p class="card-text"><strong>E-mail: </strong>{{ $trainee->email }}</p>
-						<p class="card-text float-right "><strong>Sexo: </strong>{{ ($trainee->gender == 'F') ? 'Femenino' : 'Masculino' }}</p>
-						<p class="card-text"><strong>Estado civil: </strong>{{ $trainee->marital_status }}</p>
-						
-					</div>
-					{{-- <div class="card-body">
-                        <img src="{{ asset('uploads/trainees/'. $trainee->image) }}" alt="{{ $trainee->name }}" class="img-fluid">
-						<p class="card-text">{!! $trainee->content !!}</p>
-					</div> --}}
-				</div>
-			</div>
-            {!! $trainee->content !!}
-
-
-		</div>
-        <div class="row mt-2">
-            <div class="col-12 col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>INFORMAÇÕES DA ESPOSA</h2>
+        <!--Familia-->
+        <div class="container shadow-sm mb-5 bg-white rounded-0">
+            <div class="row">
+                <div class="col-md-6 bg-three">
+                    <div class="container pt-5 pb-5">
+                        <div class="row justify-content-end">
+                            <div class="col-md-12">
+                                <div class="card border-1">
+                                    <img class="card-img-top" src="{{ asset('uploads/trainees/'. $trainee->image_men) }}" alt="">
+                                    <div class="card-body bg-status-1">
+                                        <p class="text-white">
+                                            <strong>Diego </strong> e  Familia
+                                        </p>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="content-text">
+                                            <p class="text-white">
+                                                <strong>Status: </strong> eChamado oficial
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        {{-- <img src="{{ asset('uploads/trainees/'. $trainee->image) }}" alt="{{ $trainee->name }}" class="img-fluid"> --}}
-                        <p class="card-text">{!! $trainee->content_woman !!}</p>
+                </div>
+                <div class="col-md-6 bg-white">
+                    <div class="container h-100">
+                        <div class="row h-100 justify-content-center align-items-center">
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <img src="{{ asset('uploads/trainees/'. $trainee->image_woman) }}" alt="" class="img-fluid border-1">
+                                <h4 class="text-red text-center">{{ $trainee->name_wife }}</h4>
+                            </div>
+                            <div class="col-md-12 align-items-center">
+                                <div class="content-text">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 pb-3">
+                                            {!! $trainee->description !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-	</div>
+
+        {!! $trainee->content_woman !!}
+
+    </section>
 
     <!--Section logos-->
     <section class="page-section bg-grey pt-5 pb-4">
@@ -122,7 +184,7 @@
         </div>
     </section>
 
-	<!-- Footer -->
+    <!-- Footer -->
     <footer class="footer-section bg-light pt-2 pb-1">
         <div class="container">
             <div class="row h-100 align-items-center">
