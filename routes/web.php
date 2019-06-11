@@ -82,3 +82,5 @@ Route::group(['prefix' => 'ajax-test-create-form'], function () {
 });
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('{slug}', 'Frontend\AppController@show')->name('formando.show');

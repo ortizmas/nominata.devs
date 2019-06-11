@@ -9750,6 +9750,18 @@ hr.light {
   font-style: italic;
   letter-spacing: -2px;
 }
+.page-section .address {
+  font-size: 12px;
+}
+
+.footer-section p {
+  font-size: 11px;
+}
+.footer-section ul li {
+  display: inline-block;
+  margin: 0 0;
+  padding: 0 5px;
+}
 
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -9857,6 +9869,9 @@ header.masthead h1 {
   background: #CD960F !important;
 }
 
+#formandos {
+  /*--------------nav--------------------*/
+}
 #formandos h3 {
   color: #8B0304 !important;
   font-family: "Montserrat", sans-serif;

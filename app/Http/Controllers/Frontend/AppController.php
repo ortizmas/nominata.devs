@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Course;
 use App\Trainee;
+use App\Union;
+use App\Association;
 use App\Http\Requests\Site\StoreInscriptionRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,13 @@ class AppController extends Controller
     	$cursos = Course::all();
     	$trainees = Trainee::get()->where('have_job', 0)->where('enabled', 1);
         $young_employees = Trainee::get()->where('have_job', 1)->where('enabled', 1);
-    	return view('frontend.index', compact('cursos', 'trainees', 'young_employees'));
+        $unions = Union::all();
+        $associations = Association::all();
+        $trainees = Trainee::where('enabled', 1)->get();
+        $trainees = collect($trainees)->all();
+
+        //dd($trainees[0]->association->union->initials);
+    	return view('frontend.index', compact('unions', 'associations', 'trainees'));
     }
 
     public function show($slug = null)
@@ -28,7 +36,7 @@ class AppController extends Controller
     		$trainee = Trainee::where('enabled', 1)->where('slug', $slug)->first();
 
     		if ( $trainee->count() > 0 ) {
-    			return view('frontend.jovenst.show', compact('trainee', 'cursos', 'trainees'));
+    			return view('frontend.show', compact('trainee', 'cursos', 'trainees'));
     		}
     		//abort(404);
     		return response()->view('errors.custom', [], 404);

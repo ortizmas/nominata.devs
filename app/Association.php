@@ -43,8 +43,13 @@ class Association extends Model
         
     }
 
-    public function Union()
+    public function union()
     {
         return $this->belongsTo(Union::class);
+    }
+
+    public function trainees()
+    {
+        return $this->hasMany(Trainee::class);
     }
 }

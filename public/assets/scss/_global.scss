@@ -96,6 +96,18 @@ hr.light {
         font-style: italic;
         letter-spacing: -2px;
     }
+    .address{
+        font-size: 12px;
+    }
+}
 
-
+.footer-section{
+    p{
+        font-size: 11px;
+    }
+    ul li{
+        display: inline-block;
+        margin: 0 0;
+        padding: 0 5px;
+    }
 }

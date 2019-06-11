@@ -98,3 +98,20 @@ if (!function_exists('LongTimeFilter')) {
         return "Faz " . $result;
     }
 }
+
+if (!function_exists('getStatus')) {
+    function getStatus($id)
+    {
+        switch ($id) {
+          case 2:
+            return 'Chamado especial';
+            break;
+          case 3:
+            return 'Disponível';
+            break;
+          default:
+            return 'Chamado oficial';
+            break;
+        }
+    }
+}

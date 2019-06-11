@@ -45,7 +45,11 @@
   <script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
   <!-- Custom scripts for this template -->
+  <script src="{{ asset('assets/js/filters.js') }}"></script>
   <script src="{{ asset('assets/js/app.js') }}"></script>
 
   @yield('scripts')

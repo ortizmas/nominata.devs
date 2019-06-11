@@ -16,77 +16,82 @@
         font-style: italic;
         letter-spacing: -2px;
     }
-  .container {
-    //max-width: 1920px;
-    .formandos-box {
-        position: relative;
-        display: block;
+    .container {
+        //max-width: 1920px;
+        .formandos-box {
+            position: relative;
+            display: block;
 
-        .bg-img{
-            background-size: 100%;
-            min-height: 300px;
-            background-position: top center;
-
-            // 575px and down
-            @include media-breakpoint-down(xs) {
-                min-height: 400px;
-            }
-            // 767px and down
-            @include media-breakpoint-down(sm) {
-                min-height: 350px;
-            }
-
-            // 991px and down
-            @include media-breakpoint-down(md) {
+            .bg-img{
+                background-size: 100%;
                 min-height: 300px;
+                background-position: top center;
+
+                // 575px and down
+                @include media-breakpoint-down(xs) {
+                    min-height: 400px;
+                }
+                // 767px and down
+                @include media-breakpoint-down(sm) {
+                    min-height: 350px;
+                }
+
+                // 991px and down
+                @include media-breakpoint-down(md) {
+                    min-height: 300px;
+                }
+
+                // 1199px and down
+                @include media-breakpoint-down(lg) {
+                    min-height: 250px;
+                }
             }
 
-            // 1199px and down
-            @include media-breakpoint-down(lg) {
-                min-height: 250px;
+            .formandos-box-caption {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                bottom: 0;
+
+                text-align: center;
+                opacity: 0;
+
+                color: $white;
+                background: fade-out($primary, .1);
+                transition: opacity 0.25s ease;
+                text-align: center;
+                .project-category {
+                    font-family: $font-family-montserrat;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+                .project-name {
+                    font-size: 1.2rem;
+                }
             }
-          }
-
-      .formandos-box-caption {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        width: 100%;
-        height: 100%;
-
-        position: absolute;
-        bottom: 0;
-
-        text-align: center;
-        opacity: 0;
-
-        color: $white;
-        background: fade-out($primary, .1);
-        transition: opacity 0.25s ease;
-        text-align: center;
-        .project-category {
-          font-family: $font-family-montserrat;
-          font-size: 0.85rem;
-          font-weight: 600;
-          text-transform: uppercase;
+            &:hover {
+                .formandos-box-caption {
+                    opacity: 1;
+                }
+            }
         }
-        .project-name {
-          font-size: 1.2rem;
+
+        .card-link:hover{
+            border: 1px solid $white-gray;
+            padding: 5px 12px;
+            border-radius: 2px;
         }
-      }
-      &:hover {
-        .formandos-box-caption {
-          opacity: 1;
-        }
-      }
     }
 
-    .card-link:hover{
-        border: 1px solid $white-gray;
-        padding: 5px 12px;
-        border-radius: 2px;
-    }
-  }
+    /*--------------nav--------------------*/
+
+
+    
 }

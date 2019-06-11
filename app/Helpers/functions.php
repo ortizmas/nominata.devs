@@ -48,8 +48,8 @@ function checkPermission($permissions){
   }
 
 
-  function getMyPermission($id)
-  {
+function getMyPermission($id)
+{
     switch ($id) {
       case 1:
         return 'admin';
@@ -61,4 +61,5 @@ function checkPermission($permissions){
         return 'user';
         break;
     }
-  }
+}
+
