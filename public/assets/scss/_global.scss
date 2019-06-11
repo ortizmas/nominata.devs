@@ -20,6 +20,16 @@ hr.divider {
 hr.light {
   border-color: $white;
 }
+//bg content
+.bg-one{
+  background: $grey-one!important;
+}
+.bg-two{
+  background: $grey-two!important;
+}
+.bg-three{
+  background: $grey-three!important;
+}
 
 // Button restyling
 .btn {
@@ -73,7 +83,13 @@ hr.light {
     border-bottom: 4px solid $red;
     margin: -47px auto 0;
 }
-
+.hr-content{
+    height: 2px;
+    color: #ececec;
+    background: #ececec;
+    font-size: 0;
+    border: 0;
+}
 .text-red{
     color: $red!important;
 }
@@ -99,6 +115,19 @@ hr.light {
     .address{
         font-size: 12px;
     }
+}
+
+//Content page
+.content-page{
+
+  .content-text{
+
+    h1{
+        font-family: $font-family-montserrat;
+        font-weight: 200;
+        letter-spacing: normal;
+    }
+  }
 }
 
 .footer-section{

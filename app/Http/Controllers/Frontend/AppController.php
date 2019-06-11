@@ -47,6 +47,11 @@ class AppController extends Controller
     	
     }
 
+    public function getCurriculo()
+    {
+        return view('frontend.cv');
+    }
+
     public static function filter()
     {
     	return view('tests.filter');

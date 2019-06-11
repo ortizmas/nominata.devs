@@ -9676,6 +9676,18 @@ hr.light {
   border-color: #ffffff;
 }
 
+.bg-one {
+  background: #fbfbfb !important;
+}
+
+.bg-two {
+  background: #f8f8f8 !important;
+}
+
+.bg-three {
+  background: #fcfcfc !important;
+}
+
 .btn {
   font-family: "Montserrat", sans-serif;
 }
@@ -9730,6 +9742,14 @@ hr.light {
   margin: -47px auto 0;
 }
 
+.hr-content {
+  height: 2px;
+  color: #ececec;
+  background: #ececec;
+  font-size: 0;
+  border: 0;
+}
+
 .text-red {
   color: #8B0304 !important;
 }
@@ -9752,6 +9772,12 @@ hr.light {
 }
 .page-section .address {
   font-size: 12px;
+}
+
+.content-page .content-text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  letter-spacing: normal;
 }
 
 .footer-section p {

@@ -24,18 +24,18 @@
 // });
 
 Route::get('/', 'Frontend\AppController@index')->name('inicio');
+Route::get('/cv', 'Frontend\AppController@getCurriculo')->name('get.cv');
+// Route::get('/gestao', 'Frontend\GtalentosController@index')->name('inicio');
+// Route::get('/processo-seletivo', 'Frontend\GtalentosController@vacancies')->name('processo.seletivo');
+// Route::post('/send-email', 'MailController@sendemail')->name('send.email');
+// Route::get('/fale-conosco', 'Frontend\GtalentosController@faleconosco')->name('fale.conosco');
+// Route::post('/fale-conosco', 'MailController@faleconoscoemail')->name('faleconosco.email');
+// Route::get('/gt/{slug?}', 'Frontend\GtalentosController@show')->name('gestaot.show');
 
-Route::get('/gestao', 'Frontend\GtalentosController@index')->name('inicio');
-Route::get('/processo-seletivo', 'Frontend\GtalentosController@vacancies')->name('processo.seletivo');
-Route::post('/send-email', 'MailController@sendemail')->name('send.email');
-Route::get('/fale-conosco', 'Frontend\GtalentosController@faleconosco')->name('fale.conosco');
-Route::post('/fale-conosco', 'MailController@faleconoscoemail')->name('faleconosco.email');
-Route::get('/gt/{slug?}', 'Frontend\GtalentosController@show')->name('gestaot.show');
-
-Route::get('/jovens-talentos', 'Frontend\AppController@index')->name('jovens.talentos');
-Route::get('/filter', 'Frontend\AppController@filter')->name('filter');
-Route::post('/inscription', 'Frontend\AppController@inscription')->name('inscription.store');
-Route::get('/jovens/{slug?}', 'Frontend\AppController@show')->name('info.show');
+// Route::get('/jovens-talentos', 'Frontend\AppController@index')->name('jovens.talentos');
+// Route::get('/filter', 'Frontend\AppController@filter')->name('filter');
+// Route::post('/inscription', 'Frontend\AppController@inscription')->name('inscription.store');
+// Route::get('/jovens/{slug?}', 'Frontend\AppController@show')->name('info.show');
 
 
 Auth::routes();
