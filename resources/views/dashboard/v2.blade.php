@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">VOVENS TALENTOS</h1>
+            <h1 class="m-0 text-dark">NOMINATA 2019</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div>
         </div>
@@ -21,7 +21,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-        <div class="row">
+        {{-- <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-graduate"></i></span>
@@ -35,7 +35,6 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-graduation-cap"></i></span>
@@ -49,9 +48,6 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
           <div class="clearfix hidden-md-up"></div>
 
           <div class="col-12 col-sm-6 col-md-3">
@@ -67,13 +63,12 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Jovens Talentos</span>
+                <span class="info-box-text">Total Nominata</span>
                 <span class="info-box-number">
                   {{ $allJT->count() }}
                   <small>100%</small>
@@ -81,15 +76,15 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
         <!-- /.row -->
 
         <!-- Main row -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Jovens Talentos</h3>
+                    <h3 class="card-title">Turma 2019</h3>
 
                     <div class="card-tools">
                       <span class="badge badge-danger">Total de {{ $allJT->count() }} participantes</span>
@@ -101,7 +96,24 @@
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body p-0">
-                    <ul class="users-list clearfix">
+                    <div class="row">
+                        @if (isset($allJT))
+                            @foreach ($allJT as $jt)
+                                <div class="col-md-3 p-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="{{ asset('uploads/trainees/'. $jt->image) }}" alt="{{ $jt->name }}">
+                                        <div class="card-footer text-center">
+                                            <a class="users-list-name" href="{{ route('trainees.edit', $jt->id) }}">{{ $jt->name }}</a>
+                                            <span class="users-list-date">Associação <strong>{{ $jt->association->initials }}</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    
+                    </div>
+
+                    {{-- <ul class="col-m clearfix">
                         @if (isset($allJT))
                             @foreach ($allJT as $jt)
                             <li>
@@ -111,7 +123,7 @@
                             </li>
                             @endforeach
                         @endif
-                    </ul>
+                    </ul> --}}
                     <!-- /.users-list -->
                   </div>
                   <!-- /.card-body -->
@@ -121,8 +133,8 @@
                   <!-- /.card-footer -->
                 </div>
             </div>
-            <div class="col-md-4">
-                @if (isset($careers))
+            <div class="col-md-12">
+                {{-- @if (isset($careers))
                     @foreach ($careers as $curso)
                         <div class="info-box mb-3 bg-warning">
                             <span class="info-box-icon"><i class="fa fa-university"></i></span>
@@ -132,7 +144,7 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
+                @endif --}}
                 {{-- <div class="info-box mb-3 bg-warning">
                   <span class="info-box-icon"><i class="fa fa-tag"></i></span>
                   <div class="info-box-content">

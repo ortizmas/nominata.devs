@@ -17,7 +17,7 @@
 
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">Home</a>
+                        <a class="nav-link js-scroll-trigger" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#formandos">Uniões</a>
@@ -37,7 +37,7 @@
     </nav>
 
     <!-- Home section -->
-    <header class="masthead">
+    <header class="masthead" id="home">
         <div class="container h-100">
           <div class="row h-100 align-items-center justify-content-center text-center">
             {{-- <div class="col-lg-10 align-self-end">
@@ -102,19 +102,21 @@
                             </div>
                         </a>
                         <div class="card border-0">
-                            <div class="card-body bg-status-{{ $trainee->status }}">
-                                <p class="text-white">
-                                    {{ $trainee->name }} <br>
-                                    <strong>Status: </strong>{!! getStatus($trainee->status) !!}
-                                </p>
-                                <span class="badge badge-warning float-left">{{ $trainee->association->union->initials }}</span>
-                                <span class="badge badge-warning float-right">{{ $trainee->association->initials }}</span>
-                                <div class="clearfix">
-                                    
+                            <a href="{{ url($trainee->slug) }}" style="text-decoration: none;">
+                                <div class="card-body bg-status-{{ $trainee->status }}">
+                                    <p class="text-white">
+                                        {{ $trainee->name }} <br>
+                                        <strong>Status: </strong>{!! getStatus($trainee->status) !!}
+                                    </p>
+                                    <span class="badge badge-light float-left text-red">{{ $trainee->association->union->initials }}</span>
+                                    <span class="badge badge-light float-right text-red">{{ $trainee->association->initials }}</span>
+                                    <div class="clearfix">
+                                        
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="{{ url($trainee->slug) }}" class="card-link text-white">Visualizar perfil</a>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <a href="{{ url($trainee->slug) }}" class="card-link text-white">Visualizar perfil</a>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -133,43 +135,29 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 pb-3">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/pastor.jpg') }}" class="card-img-top" alt="Leonardo Nunes">
-                        <div class="card-body bg-status-1">
-                            <p class="text-white">
-                                Pr. Leonardo Nunes
-                            </p>
-                            <div class="dropdown-divider"></div>
-                            <p class="text-white">
-                                Diretor do SALT-FADBA
-                            </p>
+        @if (isset($mensagem))
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 pb-3">
+                        <div class="card">
+                            <img src="{{ asset('uploads/images/' . $mensagem->image) }}" class="card-img-top" alt="Leonardo Nunes">
+                            <div class="card-body bg-status-1">
+                                <p class="text-white">
+                                    {{ $mensagem->title }}
+                                </p>
+                                <div class="dropdown-divider"></div>
+                                <p class="text-white">
+                                    {{ $mensagem->author }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    <h2 class="text-red">SOMOS UM</h2>
-                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                    <div class="col-lg-5">
+                        {!! $mensagem->content !!}
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </section>
     <div class="h-divider-one"></div>
 
@@ -248,19 +236,19 @@
                     <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">CARLOS <br><strong>JÚNIOR</strong></p>
+                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">DANIEL <br><strong>VIEIRA</strong></p>
+                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">DIEGO <br><strong>VERÍSSIMO</strong></p>
+                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">MARCELO <br><strong>ARAÚJO</strong></p>
+                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">RÉGIS <br><strong>MIGLIORELLI</strong></p>
+                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
             </div>
             <div class="dropdown-divider"></div>

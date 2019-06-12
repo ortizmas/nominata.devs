@@ -6,6 +6,7 @@ use App\Course;
 use App\Trainee;
 use App\Union;
 use App\Association;
+use App\Post;
 use App\Http\Requests\Site\StoreInscriptionRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,11 +20,12 @@ class AppController extends Controller
         $young_employees = Trainee::get()->where('have_job', 1)->where('enabled', 1);
         $unions = Union::all();
         $associations = Association::all();
-        $trainees = Trainee::where('enabled', 1)->get();
+        $trainees = Trainee::where('enabled', 1)->orderBy('name', 'ASC')->get();
         $trainees = collect($trainees)->all();
+        $mensagem = Post::where('slug', 'pr-leonardo-nunes')->first();
 
         //dd($trainees[0]->association->union->initials);
-    	return view('frontend.index', compact('unions', 'associations', 'trainees'));
+    	return view('frontend.index', compact('unions', 'associations', 'trainees', 'mensagem'));
     }
 
     public function show($slug = null)
@@ -34,8 +36,7 @@ class AppController extends Controller
     		$trainees = Trainee::get()->where('have_job', 0)->where('enabled', 1);
 
     		$trainee = Trainee::where('enabled', 1)->where('slug', $slug)->first();
-
-    		if ( $trainee->count() > 0 ) {
+    		if ( $trainee != null ) {
     			return view('frontend.show', compact('trainee', 'cursos', 'trainees'));
     		}
     		//abort(404);

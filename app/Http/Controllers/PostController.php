@@ -143,7 +143,7 @@ class PostController extends Controller
             $imageName = time().'.'.request()->image->getClientOriginalExtension();
             $updload = request()->image->move(public_path('uploads/images'), $imageName);
         } else {
-            $imageName = $request['image'];
+            $imageName = $post->image;
         }
         
         $postUpdate = Post::find($post->id);

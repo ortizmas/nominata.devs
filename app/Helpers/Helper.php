@@ -103,13 +103,13 @@ if (!function_exists('getStatus')) {
     function getStatus($id)
     {
         switch ($id) {
-          case 2:
-            return 'Chamado especial';
-            break;
-          case 3:
-            return 'Disponível';
-            break;
-          default:
+            case 2:
+                return 'Disponível';
+                break;
+            case 3:
+                return 'Chamado especial';
+                break;
+            case 1:
             return 'Chamado oficial';
             break;
         }

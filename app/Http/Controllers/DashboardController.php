@@ -23,7 +23,7 @@ class DashboardController extends Controller
         $careers = Career::get()->where('status', 1);
         $trainees = Trainee::get()->where('have_job', 0)->where('enabled', 1);
         $young_employees = Trainee::get()->where('have_job', 1)->where('enabled', 1);
-        $allJT = Trainee::get()->where('enabled', 1);
+        $allJT = Trainee::where('enabled', 1)->orderBy('name', 'ASC')->get();
 
         return view('dashboard.v2', compact('careers', 'trainees', 'young_employees', 'allJT'));
     }

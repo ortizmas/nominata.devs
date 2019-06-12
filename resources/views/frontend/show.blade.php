@@ -112,13 +112,16 @@
                     <div class="col-lg-6 p-5 bg-white">
                         <div class="row justify-content-sm-center">
                             <div class="col-md-6">
-                                <img class="card-img-top text-center" src="{{ asset('uploads/trainees/'. $trainee->image_woman) }}" alt="">
-
+                                @if ($trainee->image_woman != '')
+                                    <img class="card-img-top text-center" src="{{ asset('uploads/trainees/'. $trainee->image_woman) }}" alt="">
+                                @endif
                             </div>
+                        </div>
+                        <div class="row justify-content-sm-center">
                             <h6 class="text-red text-center">{{ $trainee->name_wife }}</h6>
                         </div>
                         {!! $trainee->content_woman !!}
-                    </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -138,7 +141,7 @@
                     <img src="{{ asset('assets/img/logo/turma-61.svg') }}" alt="" class="img-fluid" width="95">
                 </div>
             </div>
-            <div class="dropdown-divider"></div>
+            <div class="dropdown-divider mt-4"></div>
             <div class="row pt-3">
                 <div class="col-md">
                     <p class="text-white address">

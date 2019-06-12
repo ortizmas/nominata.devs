@@ -196,7 +196,7 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group mb-3">
+                                {{-- <div class="form-group mb-3">
                                     <textarea id="description" name="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Resumo...">{{ old('description', $trainee->description) }}</textarea>
                                     <samll id="edescriptionHelp" class="form-text text-muted">Resumos são pequenas descrições opcionais do conteúdo do seu post feitas manualmente, que podem ser usadas em seu tema. <a target="_blank" href="https://codex.wordpress.org/pt-br:Resumo" title="Resumo">Aprenda mais sobre resumos manuais.</a></small>
                                     @if ($errors->has('description'))
@@ -204,7 +204,7 @@
                                             <strong>{{ $errors->first('description') }}</strong>
                                         </span> 
                                     @endif
-                                </div>
+                                </div> --}}
 
                                 <div class="input-group mb-3">
                                     <textarea id="content_woman" name="content_woman" class="form-control{{ $errors->has('content_woman') ? ' is-invalid' : '' }}" placeholder="Conteudo da esposa" rows="10">{{ old('content_woman', $trainee->content_woman) }}</textarea>
@@ -315,10 +315,9 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <select id="status" name="status" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}">
-                                        <option value="1" {{ old('status', $trainee->status)=='1' ? 'selected' : ''  }}>Disponíl</option>
-                                        <option value="2" {{ old('status', $trainee->status)=='2' ? 'selected' : ''  }}>Chamado</option>
-                                        <option value="3" {{ old('status', $trainee->status)=='3' ? 'selected' : ''  }}>Contratado</option>
-                                        <option value="4" {{ old('status', $trainee->status)=='4' ? 'selected' : ''  }}>Contratada</option>
+                                        <option value="2" {{ old('status', $trainee->status)=='2' ? 'selected' : ''  }}>Disponível</option>
+                                        <option value="3" {{ old('status', $trainee->status)=='3' ? 'selected' : ''  }}>Chamado especial</option>
+                                        <option value="1" {{ old('status', $trainee->status)=='1' ? 'selected' : ''  }}>Chamado Oficial</option>
 
                                     </select>
                                     @if ($errors->has('status'))
