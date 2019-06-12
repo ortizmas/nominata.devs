@@ -54,7 +54,7 @@ class TraineeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAssociationRequest $request)
+    public function store(StoreTraineeRequest $request)
     {
 
         if ( $request->hasFile('image') ) {

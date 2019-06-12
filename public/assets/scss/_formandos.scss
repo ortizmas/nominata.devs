@@ -47,6 +47,32 @@
                 }
             }
 
+            .bg-img-two{
+                background-size: 100%;
+                min-height: 410px;
+                background-position: top center;
+
+                // 575px and down
+                @include media-breakpoint-down(xs) {
+                    min-height: 400px;
+                }
+                // 767px and down
+                @include media-breakpoint-down(sm) {
+                    min-height: 400px;
+                }
+
+                // 991px and down
+                @include media-breakpoint-down(md) {
+                    min-height: 300px;
+                }
+
+                // 1199px and down
+                @include media-breakpoint-down(lg) {
+                    min-height: 410px;
+                }
+
+            }
+
             .formandos-box-caption {
                 display: flex;
                 align-items: center;

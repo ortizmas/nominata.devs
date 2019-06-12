@@ -48,11 +48,11 @@
                     <div class="container pt-5 pb-5">
                         <div class="row justify-content-end">
                             <div class="col-md-12 pr-2">
-                                <a class="formandos-box" href="#" >
-                                    <div class="bg-img-two h-100" style="background-image: url({{ asset('uploads/trainees/'. $trainee->image_men) }});"></div>
-                                </a>
+                                {{-- <a class="formandos-box" href="#" >
+                                    <div class="bg-img h-100" style="background-image: url({{ asset('uploads/trainees/'. $trainee->image) }});"></div>
+                                </a> --}}
                                 <div class="card border-0">
-                                    {{-- <img class="card-img-top img-fluid" src="{{ asset('uploads/trainees/'. $trainee->image_men) }}" alt=""> --}}
+                                    <img class="card-img-top img-fluid" src="{{ asset('uploads/trainees/'. $trainee->image_men) }}" alt="">
                                     <div class="card-body bg-status-{{ $trainee->status }}">
                                         <p class="text-white">
                                             <strong>Status: </strong>{!! getStatus($trainee->status) !!}
@@ -90,11 +90,11 @@
                                             <h6>Estado civil</h6>
                                             <span class="text-muted">{{ $trainee->marital_status }}</span>
                                         </div>
-                                        {{-- <div class="col-md pb-3">
+                                        <div class="col-md pb-3">
                                             <h6>Contato</h6>
                                             <span class="text-muted"><i class="fas fa-phone"></i> {{ $trainee->phone }}</span> <br>
                                             <span class="text-muted"><i class="fas fa-envelope"></i> {{ $trainee->email }}</span>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -103,25 +103,58 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5 mb-5 bg-white ">
-            <div class="cvitae-section-content">
-                <div class="row no-gutters">
-                    <div class="col-lg-6 p-5 bg-two">
-                        {!! $trainee->content !!}
-                    </div>
-                    <div class="col-lg-6 p-5 bg-white">
-                        <div class="row justify-content-sm-center">
-                            <div class="col-md-6">
-                                <img class="card-img-top text-center" src="{{ asset('uploads/trainees/'. $trainee->image_woman) }}" alt="">
 
+        {!! $trainee->content !!}
+        
+        <!--Familia-->
+        <div class="container shadow-sm mb-5 bg-white rounded-0">
+            <div class="row">
+                <div class="col-md-6 bg-three">
+                    <div class="container pt-5 pb-5">
+                        <div class="row justify-content-end">
+                            <div class="col-md-12">
+                                <div class="card border-1">
+                                    <img class="card-img-top" src="{{ asset('uploads/trainees/'. $trainee->image_men) }}" alt="">
+                                    <div class="card-body bg-status-1">
+                                        <p class="text-white">
+                                            <strong>Diego </strong> e  Familia
+                                        </p>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="content-text">
+                                            <p class="text-white">
+                                                <strong>Status: </strong> eChamado oficial
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h6 class="text-red text-center">{{ $trainee->name_wife }}</h6>
                         </div>
-                        {!! $trainee->content_woman !!}
+                    </div>
+                </div>
+                <div class="col-md-6 bg-white">
+                    <div class="container h-100">
+                        <div class="row h-100 justify-content-center align-items-center">
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <img src="{{ asset('uploads/trainees/'. $trainee->image_woman) }}" alt="" class="img-fluid border-1">
+                                <h4 class="text-red text-center">{{ $trainee->name_wife }}</h4>
+                            </div>
+                            <div class="col-md-12 align-items-center">
+                                <div class="content-text">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 pb-3">
+                                            {!! $trainee->description !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        {!! $trainee->content_woman !!}
+
     </section>
 
     <!--Section logos-->

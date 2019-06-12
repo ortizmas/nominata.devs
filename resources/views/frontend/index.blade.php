@@ -248,19 +248,19 @@
                     <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
+                    <p class="text-white">CARLOS <br><strong>JÚNIOR</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
+                    <p class="text-white">DANIEL <br><strong>VIEIRA</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
+                    <p class="text-white">DIEGO <br><strong>VERÍSSIMO</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
+                    <p class="text-white">MARCELO <br><strong>ARAÚJO</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
+                    <p class="text-white">RÉGIS <br><strong>MIGLIORELLI</strong></p>
                 </div>
             </div>
             <div class="dropdown-divider"></div>

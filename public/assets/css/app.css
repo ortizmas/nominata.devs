@@ -9970,6 +9970,31 @@ header.masthead h1 {
     min-height: 250px;
   }
 }
+#formandos .container .formandos-box .bg-img-two {
+  background-size: 100%;
+  min-height: 410px;
+  background-position: top center;
+}
+@media (max-width: 575.98px) {
+  #formandos .container .formandos-box .bg-img-two {
+    min-height: 400px;
+  }
+}
+@media (max-width: 767.98px) {
+  #formandos .container .formandos-box .bg-img-two {
+    min-height: 400px;
+  }
+}
+@media (max-width: 991.98px) {
+  #formandos .container .formandos-box .bg-img-two {
+    min-height: 300px;
+  }
+}
+@media (max-width: 1199.98px) {
+  #formandos .container .formandos-box .bg-img-two {
+    min-height: 410px;
+  }
+}
 #formandos .container .formandos-box .formandos-box-caption {
   display: flex;
   align-items: center;
