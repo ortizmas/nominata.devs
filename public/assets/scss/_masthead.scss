@@ -31,6 +31,10 @@ header.masthead {
 }
 
 .bg-home{
+  // 991.98px and down
+  @media (max-width: 1024px) {
+      margin-top: 70px;
+  }
   // 767px and down
   @include media-breakpoint-down(sm) {
       margin-top: 70px;

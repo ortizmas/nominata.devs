@@ -128,27 +128,27 @@
     </section>
 
     <!--Section logos-->
-    <section class="page-section bg-grey pt-5 pb-4">
+    <section class="page-section bg-grey">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-4 col-lg-4 text-left">
-                    <img src="{{ asset('assets/img/logo/fadba.svg') }}" alt="" class="img-fluid" width="250">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-fadba.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
-                    <img src="{{ asset('assets/img/logo/salt.svg') }}" alt="" class="img-fluid" width="250">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-salt.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-                    <img src="{{ asset('assets/img/logo/turma-61.svg') }}" alt="" class="img-fluid" width="95">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-turma-61.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
             </div>
-            <div class="dropdown-divider mt-4"></div>
+            <div class="dropdown-divider"></div>
             <div class="row pt-3">
                 <div class="col-md">
-                    <p class="text-white address">
-                        BR-101, km 197, Capoeiruçu <br>
-                        Caixa Postal 18, Cachoeira Bahia, <br>
-                        CEP: 44.300-000 - Brasil <br>
-                        Fone: +55 (75) 3425-8000 <br>
+                    <p class="text-white address text-center">
+                        BR-101, km 197, Capoeiruçu
+                        Caixa Postal 18, Cachoeira Bahia,
+                        CEP: 44.300-000 - Brasil 
+                        Fone: +55 (75) 3425-8000
                     </p>
                 </div>
             </div>
@@ -159,15 +159,15 @@
     <footer class="footer-section bg-light pt-2 pb-1">
         <div class="container">
             <div class="row h-100 align-items-center">
-                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 float-left">
+                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 float-address">
                     <p class="text-muted m-0">&copy; 2019 - <b class="text-red">Faculdade Adventista da Bahia</b> | Projeto desenvolvido por <b>ortizmas14@gmail.com</b></p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <ul class="redes-sociais float-right m-0">
-                        <li><a href="#" title=""><i class="fab fa-facebook" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-instagram" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-youtube" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-twitter" style="font-size: 32px;"></i></a></li>
+                    <ul class="redes-sociais float-redes p-0 m-0">
+                        <li><a href="#" title=""><i class="fab fa-facebook" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-instagram" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-youtube" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-twitter" style="font-size: 28px;"></i></a></li>
                     </ul>
                 </div>
             </div>

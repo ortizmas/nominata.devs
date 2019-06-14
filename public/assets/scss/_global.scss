@@ -1,4 +1,5 @@
 // Global styling for this template
+/*Style global*/
 body,
 html {
   width: 100%;
@@ -170,6 +171,7 @@ hr.light {
   }
 }
 
+
 .footer-section{
     p{
         font-size: 11px;
@@ -179,4 +181,19 @@ hr.light {
         margin: 0 0;
         padding: 0 5px;
     }
+    
+    // 575px and down
+    .float-address{
+        @include media-breakpoint-down(xs) {
+            text-align: center!important;
+        }
+    }
+    .float-redes{
+        text-align: right;
+        @include media-breakpoint-down(xs) {
+            padding-top: 10px!important;
+            text-align: center!important;
+        }
+    }
+    
 }

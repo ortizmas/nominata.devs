@@ -12,9 +12,10 @@
     h3{
         color: $red !important;
         font-family: $font-family-montserrat;
-        font-weight: 600;
+        font-weight: 900;
         font-style: italic;
-        letter-spacing: -2px;
+        letter-spacing: normal;
+        font-size: 1.8rem;
     }
     .container {
         //max-width: 1920px;
@@ -53,26 +54,26 @@
                 background-size: 100%;
                 min-height: 410px;
                 background-position: top center;
-
-                // 575px and down
-                @include media-breakpoint-down(xs) {
-                    min-height: 400px;
+                // 1199px and down
+                @include media-breakpoint-down(xl) {
+                    min-height: 560px;
+                }
+                // 1199px and down
+                @include media-breakpoint-down(lg) {
+                    min-height: 410px;
+                }
+                // 991px and down
+                @include media-breakpoint-down(md) {
+                    min-height: 300px;
                 }
                 // 767px and down
                 @include media-breakpoint-down(sm) {
                     min-height: 400px;
                 }
-
-                // 991px and down
-                @include media-breakpoint-down(md) {
-                    min-height: 300px;
+                // 575px and down
+                @include media-breakpoint-down(xs) {
+                    min-height: 325px;
                 }
-
-                // 1199px and down
-                @include media-breakpoint-down(lg) {
-                    min-height: 410px;
-                }
-
             }
 
             .formandos-box-caption {
@@ -110,7 +111,12 @@
                 }
             }
         }
-
+        .card{
+            small, .small {
+                font-size: 70%;
+                font-weight: 400;
+            }
+        }
         .card-link:hover{
             border: 1px solid $white-gray;
             padding: 5px 12px;

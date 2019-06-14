@@ -40,7 +40,9 @@
 
     <div class="container-fluid h-100 p-0">
         <div class="bg-home">
-            <img src="{{ asset('/assets/img/bg/bg-home-2.jpg') }}" alt="" class="img-fluid">
+            {{-- <img src="{{ asset('/assets/img/bg/bg-home-2.jpg') }}" alt="" class="img-fluid w-100"> --}}
+            <img src="https://res.cloudinary.com/fadba/image/upload/v1560515969/nominata-min_byvrdi.jpg" alt="Turma 60" class="img-fluid w-100">
+
         </div>
     </div>
     {{-- <header class="masthead" id="home">
@@ -100,7 +102,7 @@
                             </div>
                             <div class="formandos-box-caption">
                               <div class="project-category text-white-50">
-                                {{ $trainee->name }}
+                                {{-- {{ $trainee->name }} --}}
                               </div>
                               <div class="project-name">
                                 <i class="fa fa-search"></i>
@@ -114,7 +116,7 @@
                                     <span class="text-white"><strong>{{ $trainee->name }}</strong></span><br>
 
                                     <small class="text-white float-left"><strong>Status: </strong>{!! getStatus($trainee->status) !!}</small>
-                                    <small class="text-white float-right">{{ $trainee->association->union->initials }} / {{ $trainee->association->initials }}</small>
+                                    <small class="text-white float-right">{{ $trainee->association->union->initials }}/{{ $trainee->association->initials }}</small>
                                     <div class="clearfix">
                                         
                                     </div>
@@ -177,8 +179,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-3 pb-3">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 pl-5 pb-3">
                     <div class="media">
                         <img src="{{ asset('assets/img/datas/06.svg') }}" class="align-self-center mr-3" width="80" alt="06 DEZ">
                         <div class="media-body">
@@ -186,7 +188,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 pb-3">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pl-5 pb-3">
                     <div class="media">
                         <img src="{{ asset('assets/img/datas/07.svg') }}" class="align-self-center mr-3" width="80" alt="07 DEZ">
                         <div class="media-body">
@@ -194,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 pb-3">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pl-5 pb-3">
                     <div class="media">
                         <img src="{{ asset('assets/img/datas/08.svg') }}" class="align-self-center mr-3" width="80" alt="08 DEZ">
                         <div class="media-body">
@@ -209,78 +211,24 @@
 
     <!-- Services Section -->
     <section class="page-section bg-light" id="services">
-        {{-- <div class="container">
-            <div class="row no-gutters justify-content-center">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/01.png') }}" alt="" width="100%">
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/02.png') }}" alt="" width="100%">
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/03.png') }}" alt="" width="100%">
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/04.png') }}" alt="" width="100%">
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/05.png') }}" alt="" width="100%">
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <img class="img-fluid" src="{{ asset('assets/img/diretiva/06.png') }}" alt="" width="100%">
-                </div>
-            </div>
-
-        </div> --}}
         <div class="container-fluid p-0">
-            <img src="{{ asset('assets/img/bg/comissao.jpg') }}" alt="Comissão" class="img-fluid">
+            {{-- <img src="{{ asset('assets/img/bg/comissao.jpg') }}" alt="Comissão" class="img-fluid w-100"> --}}
+            <img src="https://res.cloudinary.com/fadba/image/upload/v1560516168/14_eldssm.png" alt="Comissão" class="img-fluid w-100">
         </div>
-        
     </section>
-    {{-- <div class="h-divider-two"></div> --}}
-    {{-- <section class="page-section bg-dark pt-3" style="padding-top: -20px;">
-        <div class="container">
-            <div class="row no-gutters justify-content-center">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-                    <p class="text-white">FABIO <br><strong>SANTOS</strong></p>
-                </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="row justify-content-center pt-3 pb-5">
-                <div class="col-md text-center">
-                    <h1 class="text-white">COMISSÃO <b class="text-red">DE</b> FORMATURA</h1>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <!--Section logos-->
     <section class="page-section bg-grey">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="col-sm-12 col-md-3 col-lg-3 p-5">
-                    <img src="{{ asset('assets/img/logo/logo-fadba.svg') }}" alt="" class="img-fluid" width="100%">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-fadba.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 p-5">
-                    <img src="{{ asset('assets/img/logo/logo-salt.svg') }}" alt="" class="img-fluid" width="100%">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-salt.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 p-5">
-                    <img src="{{ asset('assets/img/logo/logo-turma-61.svg') }}" alt="" class="img-fluid" width="100%">
+                <div class="col-sm-4 col-sm-4 col-md-3 col-lg-3 p-4 text-center">
+                    <img src="{{ asset('assets/img/logo/logo-turma-61.svg') }}" alt="" class="img-fluid" width="80%">
                 </div>
             </div>
             <div class="dropdown-divider"></div>
@@ -301,15 +249,15 @@
     <footer class="footer-section bg-light pt-2 pb-1">
         <div class="container">
             <div class="row h-100 align-items-center">
-                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 float-left">
+                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 float-address">
                     <p class="text-muted m-0">&copy; 2019 - <b class="text-red">Faculdade Adventista da Bahia</b> | Projeto desenvolvido por <b>ortizmas14@gmail.com</b></p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <ul class="redes-sociais float-right m-0">
-                        <li><a href="#" title=""><i class="fab fa-facebook" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-instagram" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-youtube" style="font-size: 32px;"></i></a></li>
-                        <li><a href="#" title=""><i class="fab fa-twitter" style="font-size: 32px;"></i></a></li>
+                    <ul class="redes-sociais float-redes p-0 m-0">
+                        <li><a href="#" title=""><i class="fab fa-facebook" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-instagram" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-youtube" style="font-size: 28px;"></i></a></li>
+                        <li><a href="#" title=""><i class="fab fa-twitter" style="font-size: 28px;"></i></a></li>
                     </ul>
                 </div>
             </div>

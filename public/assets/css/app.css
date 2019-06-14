@@ -9656,6 +9656,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/*Style global*/
 body,
 html {
   width: 100%;
@@ -9831,6 +9832,20 @@ hr.light {
   margin: 0 0;
   padding: 0 5px;
 }
+@media (max-width: 575.98px) {
+  .footer-section .float-address {
+    text-align: center !important;
+  }
+}
+.footer-section .float-redes {
+  text-align: right;
+}
+@media (max-width: 575.98px) {
+  .footer-section .float-redes {
+    padding-top: 10px !important;
+    text-align: center !important;
+  }
+}
 
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -9843,7 +9858,7 @@ hr.light {
   color: #212529;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: #6c757d;
+  color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   font-size: 0.9rem;
@@ -9926,6 +9941,11 @@ header.masthead h1 {
   }
 }
 
+@media (max-width: 1024px) {
+  .bg-home {
+    margin-top: 70px;
+  }
+}
 @media (max-width: 767.98px) {
   .bg-home {
     margin-top: 70px;
@@ -9955,9 +9975,10 @@ header.masthead h1 {
 #formandos h3 {
   color: #8B0304 !important;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  font-weight: 900;
   font-style: italic;
-  letter-spacing: -2px;
+  letter-spacing: normal;
+  font-size: 1.8rem;
 }
 #formandos .container .formandos-box {
   position: relative;
@@ -9993,15 +10014,11 @@ header.masthead h1 {
   background-size: 100%;
   min-height: 410px;
   background-position: top center;
+  min-height: 560px;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 1199.98px) {
   #formandos .container .formandos-box .bg-img-two {
-    min-height: 400px;
-  }
-}
-@media (max-width: 767.98px) {
-  #formandos .container .formandos-box .bg-img-two {
-    min-height: 400px;
+    min-height: 410px;
   }
 }
 @media (max-width: 991.98px) {
@@ -10009,9 +10026,14 @@ header.masthead h1 {
     min-height: 300px;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 767.98px) {
   #formandos .container .formandos-box .bg-img-two {
-    min-height: 410px;
+    min-height: 400px;
+  }
+}
+@media (max-width: 575.98px) {
+  #formandos .container .formandos-box .bg-img-two {
+    min-height: 325px;
   }
 }
 #formandos .container .formandos-box .formandos-box-caption {
@@ -10041,6 +10063,10 @@ header.masthead h1 {
 }
 #formandos .container .formandos-box:hover .formandos-box-caption {
   opacity: 1;
+}
+#formandos .container .card small, #formandos .container .card .small {
+  font-size: 70%;
+  font-weight: 400;
 }
 #formandos .container .card-link:hover {
   border: 1px solid #fbfbfb;

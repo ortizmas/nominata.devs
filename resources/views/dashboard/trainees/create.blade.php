@@ -304,8 +304,9 @@
                                 <div class="input-group mb-3">
                                     <select id="status" name="status" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}">
                                         <option value="2" {{ old('status')=='2' ? 'selected' : ''  }}>Disponível</option>
-                                        <option value="3" {{ old('status')=='3' ? 'selected' : ''  }}>Chamado especial</option>
+                                        <option value="3" {{ old('status')=='3' ? 'selected' : ''  }}>Contratado</option>
                                         <option value="1" {{ old('status')=='1' ? 'selected' : ''  }}>Chamado Oficial</option>
+                                        <option value="4" {{ old('status')=='4' ? 'selected' : ''  }}>Contratada</option>
 
                                     </select>
                                     @if ($errors->has('status'))

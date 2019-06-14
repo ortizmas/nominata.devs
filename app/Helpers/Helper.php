@@ -107,7 +107,10 @@ if (!function_exists('getStatus')) {
                 return 'Disponível';
                 break;
             case 3:
-                return 'Chamado especial';
+                return 'Contratado';
+                break;
+            case 4:
+                return 'Contratada';
                 break;
             case 1:
             return 'Chamado oficial';
