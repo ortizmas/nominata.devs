@@ -24,26 +24,28 @@
 
             .bg-img{
                 background-size: 100%;
-                min-height: 300px;
+                min-height: 275px;
                 background-position: top center;
 
-                // 575px and down
-                @include media-breakpoint-down(xs) {
-                    min-height: 400px;
+                // 1199px and down
+                @include media-breakpoint-down(xl) {
+                    min-height: 275px !important;
+                }
+                // 1199px and down
+                @include media-breakpoint-down(lg) {
+                    min-height: 230px !important;
+                }
+                // 991px and down
+                @include media-breakpoint-down(md) {
+                    min-height: 315px !important;
                 }
                 // 767px and down
                 @include media-breakpoint-down(sm) {
-                    min-height: 350px;
+                    min-height: 260px !important;
                 }
-
-                // 991px and down
-                @include media-breakpoint-down(md) {
-                    min-height: 300px;
-                }
-
-                // 1199px and down
-                @include media-breakpoint-down(lg) {
-                    min-height: 250px;
+                // 575px and down
+                @include media-breakpoint-down(xs) {
+                    min-height: 355px !important;
                 }
             }
 
@@ -89,7 +91,7 @@
                 opacity: 0;
 
                 color: $white;
-                background: fade-out($primary, .1);
+                background: #2125293b;
                 transition: opacity 0.25s ease;
                 text-align: center;
                 .project-category {

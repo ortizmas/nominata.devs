@@ -3,11 +3,11 @@ header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - #{$navbar-height});
   //background: linear-gradient(to bottom, #{fade-out($brown, .2)} 0%,#{fade-out($brown, .2)} 100%), url('../img/bg/bg-home-1.jpg');
-  background: linear-gradient(to bottom, #0000002b 0%, #0000002b 100%), url(../img/bg/bg-home-1.jpg);
+  background: linear-gradient(to bottom, #0000001c 0%, #0000001c 100%), url(../img/bg/bg-home-2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100%;
   h1 {
     font-size: 2.25rem;
   }
@@ -27,5 +27,16 @@ header.masthead {
     h1 {
       font-size: 3.5rem;
     }
+  }
+}
+
+.bg-home{
+  // 767px and down
+  @include media-breakpoint-down(sm) {
+      margin-top: 70px;
+  }
+  // 575px and down
+  @include media-breakpoint-down(xs) {
+      margin-top: 75px !important;
   }
 }

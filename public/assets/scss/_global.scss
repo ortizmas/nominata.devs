@@ -64,7 +64,7 @@ hr.light {
   display: block;
   margin: -25px auto 0;
   width: 100%;
-  height: 25px;
+  height: 54px;
   border-radius: 125px/12px;
   box-shadow: 0 0 8px black;
 }
@@ -72,9 +72,9 @@ hr.light {
 .h-divider-one{
     border:none;
     width: 100%;
-    height: 50px;
+    height: 54px;
     margin-top: 0;
-    border-bottom: 4px solid $red;
+    border-bottom: 3px solid $red;
     box-shadow: 0 10px 10px -10px #000;
     margin: -50px auto 10px; 
 }
@@ -99,6 +99,11 @@ hr.light {
 .bg-grey{
     background: $dark-grey!important;
 }
+.btn-red{
+  color: #ffffff;
+  background-color: $red;
+  border-color: $red;
+}
 
 // Page section padding
 .page-section {
@@ -110,10 +115,11 @@ hr.light {
 
     h3{
         color: $red !important;
-        font-family: $font-family-montserrat;
-        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
         font-style: italic;
-        letter-spacing: -2px;
+        letter-spacing: normal;
+        font-size: 36px;
     }
     .address{
         font-size: 12px;
