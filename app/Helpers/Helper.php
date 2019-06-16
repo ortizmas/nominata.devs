@@ -99,6 +99,18 @@ if (!function_exists('LongTimeFilter')) {
     }
 }
 
+if (!function_exists('getFirstName')) {
+    function getFirstName($str)
+    {
+        $name = explode(" ",$str);
+        $first_name = $name[0];
+        unset($name[0]);
+        $resto = implode(" ", $name);
+
+        return array('first_name'=> $first_name, 'last_name' => $resto);
+    }
+}
+
 if (!function_exists('getStatus')) {
     function getStatus($id)
     {
@@ -116,5 +128,11 @@ if (!function_exists('getStatus')) {
             return 'Chamado oficial';
             break;
         }
+    }
+}
+
+if (!function_exists('onlyNumbers')) {
+    function onlyNumbers($str) {
+        return preg_replace("/[^0-9]/", "", $str);
     }
 }

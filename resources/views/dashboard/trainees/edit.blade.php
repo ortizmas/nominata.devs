@@ -139,7 +139,17 @@
                                     </div>
                                 </div>
 
-                                
+                                <div class="input-group mb-3">
+                                    <div class="custom-file">
+                                        <input type="file" name="file" class="custom-file-input {{ $errors->has('file') ? ' is-invalid' : ''}}" id="customFile" lang="pt-BR" >
+                                        <label class="custom-file-label" for="customFile">{{ old('file', $trainee->file) }}</label>
+                                    </div>
+                                    @if ($errors->has('file'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('file') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                                 
                                 <div class="input-group mb-3">
                                     <div class="custom-file">

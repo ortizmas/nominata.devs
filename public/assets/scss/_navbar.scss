@@ -1,4 +1,26 @@
 // Base styling for the navbar
+#page-top{
+    // 767px and down
+    @include media-breakpoint-down(sm) {
+        .fixed-top {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+    }
+    // 575px and down
+    @include media-breakpoint-down(xs) {
+        .fixed-top {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+    }
+}
 #mainNav {
   box-shadow: $box-shadow;
   background-color: $red;
@@ -65,7 +87,7 @@
       .navbar-nav {
         .nav-item {
           .nav-link {
-            color: $grey-four;
+            color: $white;
             &:hover {
               color: $grey-one;
             }

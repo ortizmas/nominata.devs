@@ -22,6 +22,7 @@ class CreateTraineesTable extends Migration
             $table->char('age', 3);
             $table->char('gender', 1);
             $table->string('marital_status');
+            $table->string('file');
             $table->string('image');
             $table->text('description');
             $table->string('image_men');

@@ -14,6 +14,7 @@ class Trainee extends Model
     	'age',
         'gender',
     	'marital_status',
+        'file',
     	'image',
     	'description',
         'image_men',

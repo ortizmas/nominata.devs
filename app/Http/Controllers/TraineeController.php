@@ -32,7 +32,7 @@ class TraineeController extends Controller
      */
     public function index()
     {
-        $trainees = Trainee::paginate();
+        $trainees = Trainee::paginate(100);
         return view('dashboard.trainees.index', compact('trainees'));
     }
 
@@ -56,23 +56,29 @@ class TraineeController extends Controller
      */
     public function store(StoreTraineeRequest $request)
     {
+        if ( $request->hasFile('file') ) {
+            $fileName = time().'.'.request()->file->getClientOriginalExtension();
+            $updload = request()->file->move(public_path('uploads/files'), $fileName);
+        } else {
+            $fileName = $request['file'];
+        }
 
         if ( $request->hasFile('image') ) {
-            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            $imageName = time().'_men.'.request()->image->getClientOriginalExtension();
             $updload = request()->image->move(public_path('uploads/trainees'), $imageName);
         } else {
             $imageName = $request['image'];
         }
 
         if ( $request->hasFile('image_men') ) {
-            $imageNameMen = time().'.'.request()->image_men->getClientOriginalExtension();
+            $imageNameMen = time().'_family.'.request()->image_men->getClientOriginalExtension();
             $updload = request()->image_men->move(public_path('uploads/trainees'), $imageNameMen);
         } else {
             $imageNameMen = $request['image_men'];
         }
 
         if ( $request->hasFile('image_woman') ) {
-            $imageNameWomen = time().'.'.request()->image_woman->getClientOriginalExtension();
+            $imageNameWomen = time().'_woman.'.request()->image_woman->getClientOriginalExtension();
             $updload = request()->image_woman->move(public_path('uploads/trainees'), $imageNameWomen);
         } else {
             $imageNameWomen = $request['image_woman'];
@@ -86,6 +92,7 @@ class TraineeController extends Controller
             'age' => $request['age'],
             'gender' => $request['gender'],
             'marital_status' => $request['marital_status'],
+            'file' => $fileName,
             'image' => $imageName,
             'description' => $request['description'],
             'image_men' => $imageNameMen,
@@ -140,22 +147,28 @@ class TraineeController extends Controller
     {
         //dd( $trainee->image );
         $traineeUpdate = Trainee::find($trainee->id);
+        if ( $request->hasFile('file') != false) {
+            $fileName = time().'.'.request()->file->getClientOriginalExtension();
+            $updload = request()->file->move(public_path('uploads/files'), $fileName);
+        } else {
+            $fileName = $trainee->file;
+        }
         if ( $request->hasFile('image') != false) {
-            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            $imageName = time().'_men.'.request()->image->getClientOriginalExtension();
             $updload = request()->image->move(public_path('uploads/trainees'), $imageName);
         } else {
             $imageName = $trainee->image;
         }
 
         if ( $request->hasFile('image_men') ) {
-            $imageNameMen = time().'.'.request()->image_men->getClientOriginalExtension();
+            $imageNameMen = time().'_family.'.request()->image_men->getClientOriginalExtension();
             $updload = request()->image_men->move(public_path('uploads/trainees'), $imageNameMen);
         } else {
             $imageNameMen = $trainee->image_men;
         }
 
         if ( $request->hasFile('image_woman') ) {
-            $imageNameWomen = time().'.'.request()->image_woman->getClientOriginalExtension();
+            $imageNameWomen = time().'_woman.'.request()->image_woman->getClientOriginalExtension();
             $updload = request()->image_woman->move(public_path('uploads/trainees'), $imageNameWomen);
         } else {
             $imageNameWomen = $trainee->image_woman;
@@ -171,6 +184,7 @@ class TraineeController extends Controller
             'age' => $request['age'],
             'gender' => $request['gender'],
             'marital_status' => $request['marital_status'],
+            'file' => $fileName,
             'image' => $imageName,
             'description' => $request['description'],
             'image_men' => $imageNameMen,
@@ -187,7 +201,7 @@ class TraineeController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
-        return redirect()->route('trainees.edit', $trainee)->with('success', 'O trainee foi alterado com sucesso!!');
+        return redirect()->route('trainees.edit', $traineeUpdate->id)->with('success', 'O trainee foi alterado com sucesso!!');
     }
 
     /**

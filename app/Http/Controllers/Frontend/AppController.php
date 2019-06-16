@@ -18,8 +18,8 @@ class AppController extends Controller
     	$cursos = Course::all();
     	$trainees = Trainee::get()->where('have_job', 0)->where('enabled', 1);
         $young_employees = Trainee::get()->where('have_job', 1)->where('enabled', 1);
-        $unions = Union::all();
-        $associations = Association::all();
+        $unions = Union::orderBy('name', 'ASC')->get();
+        $associations = Association::orderBy('name', 'ASC')->get();
         $trainees = Trainee::where('enabled', 1)->orderBy('name', 'ASC')->get();
         $trainees = collect($trainees)->all();
         $mensagem = Post::where('slug', 'pr-leonardo-nunes')->first();
