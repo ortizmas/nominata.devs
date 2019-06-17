@@ -1,5 +1,7 @@
 @extends('layouts.frontend.nominata')
-
+@section('styles')
+    
+@endsection
 @section('content')
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-1" id="mainNav">
@@ -83,7 +85,7 @@
         </div>
         
         <div class="container pb-5">
-            <div class="grid isotope">
+            <div class="js-filter-grid isotope">
                 <div class="row">
                     @foreach ($trainees as $trainee)
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 pb-3 element-item {{ $trainee->association->union->slug }} {{ $trainee->association->slug }} {{ $trainee->name }}" data-category="{{ $trainee->slug }}">
@@ -91,7 +93,7 @@
                                 {{-- <div class="bg-img" style="background-image: url({{ asset('uploads/trainees/'. $trainee->image) }});">
                                     
                                 </div> --}}
-                                <img src="{{ asset('uploads/trainees/'. $trainee->image) }}" alt="{{ $trainee->name }}" class="img-fluid" height="268">
+                                <img src="{{ asset('uploads/trainees/'. $trainee->image) }}" alt="{{ $trainee->name }}" class="img-fluid" >
                                 <div class="formandos-box-caption">
                                   <div class="project-category text-white-50">
                                     
