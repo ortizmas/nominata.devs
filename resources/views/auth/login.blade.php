@@ -9,7 +9,7 @@
             <p class="login-box-msg">{{ __('Login') }}</p>
 
             <form action="{{ route('login') }}" method="post">
-                @csrf
+                {{ csrf_field() }}
                 <div class="input-group mb-3">
                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                     <div class="input-group-append">
