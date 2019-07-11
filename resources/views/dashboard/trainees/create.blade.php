@@ -38,11 +38,12 @@
                 </div>
             @endif
             <form action="{{ route('trainees.store') }}" method="post" novalidate="" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body register-card-body">
-                                @csrf
+                                
 
                                 <div class="row">
                                     <div class="input-group mb-3 col-md-6">
@@ -382,6 +383,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="/dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
     <!--StringToSlug-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/speakingurl/13.0.0/speakingurl.min.js" type="text/javascript"></script>
     <script src="/dist/plugins/stringToSlug/jquery.stringtoslug.min.js"></script>
@@ -390,6 +392,9 @@
     <script src="/dist/plugins/pickadate/picker.js"></script>
     <script src="/dist/plugins/pickadate/picker.date.js"></script>
     <script src="/dist/plugins/pickadate/picker.time.js"></script>
+    <!--Mask Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    {{-- <script src="/dist/plugins/input-mask/jquery.inputmask.extension.js"></script> --}}
     <!-- AdminLTE App -->
     <script src="/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -408,6 +413,15 @@
         $('.custom-file-input').on('change', function() { 
             let fileName = $(this).val().split('\\').pop(); 
             $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+        });
+        
+        $('#phone').mask('(00) 0000-00009');
+        $('#phone').blur(function(event) {
+           if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+              $('#phone').mask('(00) 00000-0009');
+           } else {
+              $('#phone').mask('(00) 0000-00009');
+           }
         });
         
     </script>

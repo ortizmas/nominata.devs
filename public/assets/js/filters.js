@@ -3,7 +3,8 @@ var qsRegex;
 var buttonFilter;
 
 // init Isotope
-var $grid = $('.grid').isotope({
+
+/*var $grid = $('.js-filter-grid').isotope({
   itemSelector: '.element-item',
   layoutMode: 'fitRows',
   filter: function() {
@@ -12,6 +13,19 @@ var $grid = $('.grid').isotope({
     var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
     return searchResult && buttonResult;
   }  
+});*/
+
+var $grid = $('.js-filter-grid').imagesLoaded( function() {
+    $grid.isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows',
+        filter: function() {
+            var $this = $(this);
+            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+            var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+            return searchResult && buttonResult;
+        } 
+    });
 });
 
 // bind filter on select change

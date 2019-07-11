@@ -46,14 +46,12 @@
                 </div>
             @endif
             <form action="{{ route('trainees.update', $trainee->id) }}" method="post" novalidate="" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+                {{ csrf_field() }}
+                {{ method_field('PUT') }}
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body register-card-body">
-                                @csrf
-
                                 <div class="row">
                                     <div class="input-group mb-3 col-md-6">
                                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $trainee->name) }}" placeholder="Nome completo" required autofocus> 
@@ -400,6 +398,8 @@
     <script src="/dist/plugins/pickadate/picker.js"></script>
     <script src="/dist/plugins/pickadate/picker.date.js"></script>
     <script src="/dist/plugins/pickadate/picker.time.js"></script>
+    <!--Mask Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <!-- AdminLTE App -->
     <script src="/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -418,6 +418,15 @@
         $('.custom-file-input').on('change', function() { 
             let fileName = $(this).val().split('\\').pop(); 
             $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+        });
+
+        $('#phone').mask('(00) 0000-00009');
+        $('#phone').blur(function(event) {
+           if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+              $('#phone').mask('(00) 00000-0009');
+           } else {
+              $('#phone').mask('(00) 0000-00009');
+           }
         });
         
     </script>
